@@ -6,11 +6,11 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 13:43:20 by adantas-          #+#    #+#             */
-/*   Updated: 2022/09/21 17:18:55 by adantas-         ###   ########.fr       */
+/*   Updated: 2022/11/04 15:19:44 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 int	ft_atoi(const char *nptr)
 {

@@ -6,11 +6,11 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:51:38 by adantas-          #+#    #+#             */
-/*   Updated: 2022/11/04 10:01:27 by adantas-         ###   ########.fr       */
+/*   Updated: 2022/11/04 15:24:06 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "gnl.h"
+#include "../includes/gnl.h"
 
 size_t	ft_strlen(const char *s)
 {

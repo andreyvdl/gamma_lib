@@ -6,12 +6,12 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:23:17 by adantas-          #+#    #+#             */
-/*   Updated: 2022/11/04 10:00:09 by adantas-         ###   ########.fr       */
+/*   Updated: 2022/11/07 13:21:02 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
+#ifndef GNL_H
+# define GNL_H
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif

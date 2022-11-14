@@ -6,11 +6,11 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 04:28:52 by adantas-          #+#    #+#             */
-/*   Updated: 2022/09/08 19:08:09 by adantas-         ###   ########.fr       */
+/*   Updated: 2022/11/04 15:26:11 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {

@@ -6,11 +6,11 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 20:08:31 by adantas-          #+#    #+#             */
-/*   Updated: 2022/09/23 23:00:21 by adantas-         ###   ########.fr       */
+/*   Updated: 2022/11/04 15:25:31 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 static size_t	count_words(char const *str, char cut);
 static void		insrt_str(char const *src, char **dst, char dlmt);
