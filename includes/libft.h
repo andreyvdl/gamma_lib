@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:00:37 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/06 21:39:04 by adantas-         ###   ########.fr       */
+/*   Updated: 2022/12/06 22:52:49 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ size_t	ft_strlen(const char *s);
 int		ft_atoi(const char *nptr);
 char	*ft_strdup(const char *s);
 char	*ft_strchr(const char *s, int c);
+char	*ft_strcpy(char *dst, char *src);
 char	**ft_split(char const *s, char c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strjoin(char const *s1, char const *s2);
