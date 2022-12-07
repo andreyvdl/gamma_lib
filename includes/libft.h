@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:00:37 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/07 14:23:35 by adantas-         ###   ########.fr       */
+/*   Updated: 2022/12/07 14:54:13 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 // work with pointers
-void	ft_swap(void *a, void *b);
+void	ft_swap(void **a, void **b);
 
 #endif
