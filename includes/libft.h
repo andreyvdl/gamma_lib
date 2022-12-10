@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:00:37 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/07 16:40:50 by adantas-         ###   ########.fr       */
+/*   Updated: 2022/12/09 22:44:53 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int				ft_isdigit(int c);
 int				ft_islower(int c);
 int				ft_isprint(int c);
 int				ft_isupper(int c);
+int				ft_isprime(long long int nb);
 
 int				ft_tolower(int c);
 int				ft_toupper(int c);
@@ -92,5 +93,7 @@ void			ft_swap(void **a, void **b);
 
 // mathemathics
 long long int	ft_fact(long long int n);
+long double		ft_sqrt(long double n);
+long long int	ft_next_prime(long long int nb);
 
 #endif
