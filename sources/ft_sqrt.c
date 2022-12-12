@@ -6,13 +6,13 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 22:54:36 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/09 22:44:42 by adantas-         ###   ########.fr       */
+/*   Updated: 2022/12/12 11:49:04 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-long double ft_sqrt(long double n)
+long double	ft_sqrt(long double n)
 {
 	long double		total;
 	long long int	fat;

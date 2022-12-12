@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:00:37 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/10 01:08:01 by adantas-         ###   ########.fr       */
+/*   Updated: 2022/12/12 11:50:05 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ void			ft_putnbr_fd(int n, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putchar(char c);
 void			ft_putstr(char *str);
-
 
 // work with pointers
 void			ft_swap(void **a, void **b);
