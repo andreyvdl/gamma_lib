@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:00:37 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/12 11:50:05 by adantas-         ###   ########.fr       */
+/*   Updated: 2022/12/12 21:49:03 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,21 @@ typedef struct s_list
 }					t_list;
 
 // linked list
-int				ft_lstsize(t_list *lst);
-t_list			*ft_lstlast(t_list *lst);
-t_list			*ft_lstnew(void *content);
+void			ft_lst_foreach_if(t_list *begin_list, void (*f)(void *),
+					void *data_ref, int (*cmp)());
 void			ft_lstadd_back(t_list **lst, t_list *new);
 void			ft_lstadd_front(t_list **lst, t_list *new);
-void			ft_lstiter(t_list *lst, void (*f)(void *));
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
-					void (*del)(void *));
+t_list			*ft_lstat(t_list *begin_list, unsigned int nbr);
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstdelone(t_list *lst, void (*del)(void *));
+void			ft_lstiter(t_list *lst, void (*f)(void *));
+t_list			*ft_lstlast(t_list *lst);
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
+					void (*del)(void *));
+t_list			*ft_lstnew(void *content);
+t_list			*ft_lstpush_strs(int size, char **strs);
+void			ft_lstreverse(t_list **begin_list);
+int				ft_lstsize(t_list *lst);
 
 // check things & returns true or false
 int				ft_isalnum(int c);

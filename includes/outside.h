@@ -16,5 +16,6 @@
 # include <stdlib.h>
 
 long long int	sum(long long unsigned int n, ...);
+int				ft_println(char *str, ...);
 
 #endif
