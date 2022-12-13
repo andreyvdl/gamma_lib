@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_foreach_if.c                                :+:      :+:    :+:   */
+/*   ft_lstmerge.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 21:46:31 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/13 09:01:43 by adantas-         ###   ########.fr       */
+/*   Created: 2022/12/13 09:29:14 by adantas-          #+#    #+#             */
+/*   Updated: 2022/12/13 09:30:28 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	ft_lst_foreach_if(t_list *begin_list, void (*f)(void *),
-void *data_ref, int (*cmp)())
+void	ft_lstmerge(t_list **begin_list1, t_list *begin_list2)
 {
-	if (!f || !data_ref || !cmp)
+	t_list	*current;
+
+	if (!begin_list1 || !begin_list2)
 		return ;
-	while (begin_list != 0x0)
-	{
-		if (cmp(begin_list->content, data_ref) == 0)
-			f(begin_list->content);
-		begin_list = begin_list->next;
-	}
+	current = *begin_list1;
+	while (current->next)
+		current = current->next;
+	current->next = begin_list2;
 }
