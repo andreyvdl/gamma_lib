@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:00:37 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/13 12:12:12 by adantas-         ###   ########.fr       */
+/*   Updated: 2022/12/13 13:33:27 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,14 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-}					t_list;
+}	t_list;
+
+typedef struct s_btree
+{
+	struct s_btree	*left;
+	struct s_btree	*right;
+	void			*content;
+}	t_btree;
 
 // linked list
 int				ft_lstsize(t_list *lst);
@@ -44,6 +51,14 @@ void			ft_lst_foreach_if(t_list *begin_list, void (*f)(void *),
 t_list			*ft_lstfind(t_list *begin_list, void *data_ref, int (*cmp)());
 
 // binary tree
+t_btree			*ft_betree_new(void *item);
+void			ft_btree_insert_data(t_btree **root, void *item,
+					int (*cmpf)(void *, void*));
+void			*ft_btree_search_item(t_btree *root, void *data_ref,
+					int (*cmpf)(void *, void *));
+void			ft_btree_apply_infix(t_btree *root, void (*applyf)(void *));
+void			ft_btree_apply_prefix(t_btree *root, void (*applyf)(void *));
+void			ft_btree_apply_suffix(t_btree *root, void (*applyf)(void *));
 
 // check things & returns true or false
 int				ft_isalnum(int c);
