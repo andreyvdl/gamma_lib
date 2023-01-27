@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_termial.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 22:54:36 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/12 11:49:04 by adantas-         ###   ########.fr       */
+/*   Created: 2023/01/27 10:26:15 by adantas-          #+#    #+#             */
+/*   Updated: 2023/01/27 11:11:59 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-long double	ft_sqrt(long double n)
+unsigned long long	ft_termial(unsigned long long n)
 {
-	long double		total;
-	long long int	fat;
+	long long	total;
 
-	fat = 2;
-	total = 1;
-	if (n <= 0)
-		return (0);
-	while (n != 1)
+	total = n;
+	while (n > 1)
 	{
-		if (n <= fat)
-			break ;
-		else if (n % fat == 0)
-		{
-			total *= fat;
-			n /= fat;
-		}
-		else
-			fat = ft_next_prime(fat);
+		total += (n - 1);
+		n--;
 	}
-	return (total * n);
+	return (total);
 }

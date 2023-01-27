@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 12:52:35 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/12 20:32:41 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/27 10:25:02 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,8 @@ int	ptr_2_hex(unsigned long int ptr);
 // nbr_handler.c functions
 int	fake_itoa(int nbr);
 int	u_itoa(unsigned int nbr);
+
+// extra functions related to printf
+int				ft_println(char *str, ...);
 
 #endif

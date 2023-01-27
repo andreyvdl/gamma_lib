@@ -6,15 +6,15 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:30:01 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/07 16:59:16 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/27 10:31:02 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-long long int	ft_fact(long long int n)
+long long	ft_fact(long long n)
 {
-	long long int	total;
+	long long	total;
 
 	if (n < 0)
 		return (0);

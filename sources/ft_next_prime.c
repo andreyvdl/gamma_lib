@@ -6,13 +6,13 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 22:12:47 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/09 22:39:53 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/27 10:31:19 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-long long int	ft_next_prime(long long int nb)
+long long	ft_next_prime(long long nb)
 {
 	if (nb <= 1)
 		return (2);

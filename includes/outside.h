@@ -15,7 +15,7 @@
 # include <stdarg.h>
 # include <stdlib.h>
 
+// functions off the idea of libft
 long long int	sum(long long unsigned int n, ...);
-int				ft_println(char *str, ...);
 
 #endif
