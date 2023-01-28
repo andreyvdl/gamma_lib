@@ -6,13 +6,13 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 14:22:36 by adantas-          #+#    #+#             */
-/*   Updated: 2022/11/04 15:23:31 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/28 10:01:01 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../includes/libft.h"
 
-int	hex_lwr(unsigned long hex)
+int	print_hex_low(size_t hex)
 {
 	if (hex >= 16)
 		return (hex_lwr(hex / 16) + (int)write(1, &HEX_L[hex % 16], 1));
@@ -20,7 +20,7 @@ int	hex_lwr(unsigned long hex)
 		return ((int)write(1, &HEX_L[hex % 16], 1));
 }
 
-int	hex_uppr(unsigned long hex)
+int	print_hex_cap(size_t hex)
 {
 	if (hex >= 16)
 		return (hex_uppr(hex / 16) + (int)write(1, &HEX_U[hex % 16], 1));
@@ -28,7 +28,7 @@ int	hex_uppr(unsigned long hex)
 		return ((int)write(1, &HEX_U[hex % 16], 1));
 }
 
-int	ptr_2_hex(unsigned long int ptr)
+int	print_ptr_hex(size_t ptr)
 {
 	if (ptr == 0)
 		return ((int)write(1, "(nil)", 5));

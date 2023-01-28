@@ -6,13 +6,13 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 23:02:05 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/27 23:02:32 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/28 11:43:45 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-long int	ft_abs(long int n)
+long int	ft_absolute(long int n)
 {
 	if (n < 0)
 		return (-n);

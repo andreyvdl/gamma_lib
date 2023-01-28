@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelete.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 15:12:15 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/27 13:46:00 by adantas-         ###   ########.fr       */
+/*   Created: 2022/09/19 20:39:15 by adantas-          #+#    #+#             */
+/*   Updated: 2023/01/28 13:09:56 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-size_t	ft_lstsize(t_list *lst)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	size_t	i;
+	t_list	*free_this;
 
-	i = 0;
-	while (lst != 0x0)
+	while (*lst != 0x0)
 	{
-		lst = lst->next;
-		i++;
+		free_this = *lst;
+		*lst = (*lst)->next;
+		del(free_this->content);
+		free(free_this);
 	}
-	return (i);
+	lst = 0x0;
+}
+
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
+{
+	del(lst->content);
+	free(lst);
 }

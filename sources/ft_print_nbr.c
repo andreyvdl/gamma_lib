@@ -6,18 +6,16 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 16:08:12 by adantas-          #+#    #+#             */
-/*   Updated: 2022/11/04 15:23:03 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/28 09:52:28 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
 #include "../includes/libft.h"
 
-static int			ft_abs(int nbr);
 static int			decimal(int nbr);
 static unsigned int	u_decimal(unsigned int nbr);
 
-int	fake_itoa(int nbr)
+int	print_int(int nbr)
 {
 	int		n;
 	char	*arr;
@@ -34,7 +32,7 @@ int	fake_itoa(int nbr)
 	arr[size--] = '\0';
 	while (nbr != 0 && size >= 0)
 	{
-		arr[size--] = ft_abs(nbr % 10) + '0';
+		arr[size--] = ft_absolute(nbr % 10) + '0';
 		nbr /= 10;
 	}
 	n = (int)write(1, arr, ft_strlen(arr));
@@ -43,7 +41,7 @@ int	fake_itoa(int nbr)
 	return (n);
 }
 
-int	u_itoa(unsigned int nbr)
+int	print_uint(unsigned int nbr)
 {
 	int		n;
 	char	*arr;
@@ -93,11 +91,4 @@ static unsigned int	u_decimal(unsigned int nbr)
 		house++;
 	}
 	return (house);
-}
-
-static int	ft_abs(int n)
-{
-	if (n < 0)
-		return (-n);
-	return (n);
 }

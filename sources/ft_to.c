@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_termial.c                                       :+:      :+:    :+:   */
+/*   ft_to.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/27 10:26:15 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/27 11:11:59 by adantas-         ###   ########.fr       */
+/*   Created: 2022/09/01 20:12:49 by adantas-          #+#    #+#             */
+/*   Updated: 2023/01/28 15:39:36 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
-
-unsigned long long	ft_termial(unsigned long long n)
+int	ft_tolower(int c)
 {
-	long long	total;
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
+}
 
-	total = n;
-	while (n > 1)
-	{
-		total += (n - 1);
-		n--;
-	}
-	return (total);
+int	ft_toupper(int c)
+{
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }

@@ -6,11 +6,11 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:34:50 by adantas-          #+#    #+#             */
-/*   Updated: 2022/11/04 15:25:57 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/28 15:17:35 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../includes/libft.h"
 
 int	ft_printf(const char *format, ...)
 {
@@ -27,7 +27,7 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			n += prnt_ths(format[i + 1], al);
+			n += this_flag(format[i + 1], al);
 			i++;
 		}
 		else
@@ -38,29 +38,29 @@ int	ft_printf(const char *format, ...)
 	return (n);
 }
 
-int	prnt_ths(char c, va_list al)
+int	this_flag(unsigned char c, va_list al)
 {
 	if (c == 'c')
-		return (fake_putchr(va_arg(al, int)));
+		return (print_chr(va_arg(al, int)));
 	else if (c == 's')
-		return (fake_putstr(va_arg(al, char *)));
+		return (print_str(va_arg(al, char *)));
 	else if (c == 'p')
-		return (ptr_2_hex(va_arg(al, U_LI)));
+		return (print_ptr_hex(va_arg(al, size_t)));
 	else if (c == 'i' || c == 'd')
-		return (fake_itoa(va_arg(al, int)));
+		return (print_int(va_arg(al, int)));
 	else if (c == 'u')
-		return (u_itoa(va_arg(al, unsigned int)));
+		return (print_uint(va_arg(al, unsigned int)));
 	else if (c == 'x')
-		return (hex_lwr(va_arg(al, unsigned int)));
+		return (print_hex_low(va_arg(al, unsigned int)));
 	else if (c == 'X')
-		return (hex_uppr(va_arg(al, unsigned int)));
+		return (print_hex_cap(va_arg(al, unsigned int)));
 	else if (c == '%')
 		return ((int)write(1, "%", 1));
 	else
 		return ((int)write(1, "%", 1) + (int)write(1, &c, 1));
 }
 
-int	fake_putstr(char *str)
+int	print_str(char *str)
 {
 	int	n;
 	int	i;
@@ -77,7 +77,7 @@ int	fake_putstr(char *str)
 	return (n);
 }
 
-int	fake_putchr(int c)
+int	print_chr(int c)
 {
 	return ((int)write(1, &c, 1));
 }

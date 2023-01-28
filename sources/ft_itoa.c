@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 16:04:31 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/27 23:01:54 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/28 12:55:50 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_itoa(int n)
 	arr[size--] = '\0';
 	while (n != 0 && size >= 0)
 	{
-		arr[size--] = ft_abs(n % 10) + '0';
+		arr[size--] = ft_absolute(n % 10) + '0';
 		n /= 10;
 	}
 	return (arr);

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 08:45:39 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/13 08:59:27 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/28 13:49:04 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,29 @@ t_list	*ft_lstfind(t_list *begin_list, void *data_ref, int (*cmp)())
 		begin_list = begin_list->next;
 	}
 	return (0x0);
+}
+
+t_list	*ft_lstat(t_list *begin_list, size_t nbr)
+{
+	size_t	i;
+
+	if (!begin_list)
+		return (0x0);
+	i = -1;
+	while (++i < nbr)
+	{
+		if (begin_list->next == 0x0)
+			return (0x0);
+		begin_list = begin_list->next;
+	}
+	return (begin_list);
+}
+
+t_list	*ft_lstlast(t_list *lst)
+{
+	if (lst == 0x0)
+		return (lst);
+	while (lst->next != 0x0)
+		lst = lst->next;
+	return (lst);
 }

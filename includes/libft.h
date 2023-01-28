@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:00:37 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/27 23:03:20 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/28 11:43:32 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
+# include "libft_defines.h"
+# include "libft_structs.h"
+# define HEX_L "0123456789abcdef"
+# define HEX_U "0123456789ABCDEF"
 
 typedef struct s_list
 {
@@ -27,6 +32,18 @@ typedef struct s_btree
 	struct s_btree	*right;
 	void			*content;
 }	t_btree;
+
+// printf
+int			print_chr(int c);
+int			print_int(int nbr);
+int			print_str(char *str);
+int			print_hex_low(size_t hex);
+int			print_hex_cap(size_t hex);
+int			print_ptr_hex(size_t ptr);
+int			ft_println(char *str, ...);
+int			print_uint(unsigned int nbr);
+int			ft_printf(const char *format, ...);
+int			this_flag(unsigned char c, va_list al);
 
 // linked list
 size_t		ft_lstsize(t_list *lst);
@@ -59,7 +76,7 @@ void		ft_btree_apply_infix(t_btree *root, void (*applyf)(void *));
 void		ft_btree_apply_prefix(t_btree *root, void (*applyf)(void *));
 void		ft_btree_apply_suffix(t_btree *root, void (*applyf)(void *));
 
-// check things & returns true or false
+// true or false
 int			ft_isalnum(int c);
 int			ft_isalpha(int c);
 int			ft_isascii(int c);
@@ -72,7 +89,7 @@ int			ft_isprime(size_t nb);
 int			ft_tolower(int c);
 int			ft_toupper(int c);
 
-// work with memory
+// memory
 void		ft_bzero(void *s, size_t n);
 void		*ft_memset(void *s, int c, size_t n);
 void		*ft_calloc(size_t nmemb, size_t size);
@@ -81,7 +98,7 @@ void		*ft_memcpy(void *dst, const void *src, size_t n);
 void		*ft_memmove(void *dst, const void *src, size_t n);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 
-// work with strings
+// strings
 char		*ft_itoa(long int n);
 char		*ft_strupcase(char *str);
 size_t		ft_strlen(const char *s);
@@ -106,7 +123,7 @@ char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strnstr(const char *big, const char *little, size_t len);
 
-// print & file descriptors
+// individual print
 void		ft_putchar(char c);
 void		ft_putstr(char *str);
 void		ft_putnbr_fd(int n, int fd);
@@ -118,12 +135,12 @@ void		ft_putendl_fd(char *s, int fd);
 void		ft_swap(void **a, void **b);
 
 // mathemathics
-long int	ft_abs(long int n);
+long int	ft_absolute(long int n);
 size_t		ft_factorial(size_t n);
 size_t		ft_next_prime(long int nb);
 size_t		ft_termial(unsigned long long n);
 double		ft_power(double n, long int exp);
-double		ft_neg_power(double n, long int exp);
+double		ft_npower(double n, long int exp);
 
 // frees
 void		ft_free(void *ptr);

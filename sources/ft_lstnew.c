@@ -23,3 +23,21 @@ t_list	*ft_lstnew(void *content)
 	nw_item->next = 0x0;
 	return (nw_item);
 }
+
+t_list	*ft_lstpush_strs(size_t size, char **strs)
+{
+	t_list	*lst;
+	t_list	*tmp;
+	size_t	i;
+
+	if (!strs || !*strs)
+		return (0x0);
+	lst = ft_lstnew(strs[0]);
+	i = 1;
+	while (size-- > 0)
+	{
+		tmp = ft_lstnew(strs[i++]);
+		ft_lstadd_back(&lst, tmp);
+	}
+	return (&lst);
+}

@@ -1,16 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsort.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter_pt2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 09:39:30 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/13 10:42:55 by adantas-         ###   ########.fr       */
+/*   Created: 2022/09/19 15:12:15 by adantas-          #+#    #+#             */
+/*   Updated: 2023/01/28 14:14:47 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+
+size_t	ft_lstsize(t_list *lst)
+{
+	size_t	i;
+
+	i = 0;
+	while (lst != 0x0)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
+}
 
 void	ft_lstsort(t_list **begin_list, int (*cmp)())
 {

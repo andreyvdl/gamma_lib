@@ -12,18 +12,18 @@
 
 #include "../includes/outside.h"
 
-long long int	sum(long long unsigned int n, ...)
+double	ft_sum(size_t n, ...)
 {
-	va_list					al;
-	long long int			total;
-	long long unsigned int	i;
+	va_list	al;
+	double	total;
+	size_t	i;
 
 	va_start(al, n);
 	i = 0;
 	total = 0;
 	while (i < n)
 	{
-		total += va_arg(al, long long int);
+		total += va_arg(al, double);
 		i++;
 	}
 	va_end(al);
