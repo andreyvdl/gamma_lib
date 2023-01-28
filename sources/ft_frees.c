@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cubed.c                                         :+:      :+:    :+:   */
+/*   ft_frees.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 22:02:35 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/07 22:46:30 by adantas-         ###   ########.fr       */
+/*   Created: 2023/01/27 22:57:34 by adantas-          #+#    #+#             */
+/*   Updated: 2023/01/27 23:05:59 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-long long int	ft_cubed(long long int n)
+void	ft_free(void *ptr)
 {
-	if (n == 0)
-		return (0);
-	if (n == 1)
-		return (1);
-	return (n * n * n);
+	if (ptr)
+	{
+		free(ptr);
+		ptr = 0x0;
+	}
+}
+
+void	ft_free_matrix(void **matrix)
+{
+	size_t	i;
+
+	i = -1;
+	while (matrix[++i])
+	{
+		free(matrix[i]);
+		matrix[i] = 0x0;
+	}
+	free(matrix);
+	matrix = 0x0;
 }

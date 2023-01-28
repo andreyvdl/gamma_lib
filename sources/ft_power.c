@@ -1,22 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree_apply_prefix.c                            :+:      :+:    :+:   */
+/*   ft_power.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 12:41:41 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/13 12:57:54 by adantas-         ###   ########.fr       */
+/*   Created: 2022/12/07 17:00:37 by adantas-          #+#    #+#             */
+/*   Updated: 2023/01/27 22:36:18 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	ft_btree_apply_prefix(t_btree *root, void (*applyf)(void *))
+double	ft_power(double n, long int exp)
 {
-	if (!root || !applyf)
-		return ;
-	applyf(root->content);
-	ft_btree_apply_prefix(root->left, applyf);
-	ft_btree_apply_prefix(root->right, applyf);
+	double	total;
+
+	if (exp == 0 || n == 1)
+		return (1);
+	else if (n == 0)
+		return (0);
+	else if (exp < 0)
+		return (ft_neg_power(n, exp));
+	else if (exp == 1)
+		return (n);
+	total = n;
+	while (exp > 1)
+	{
+		total *= n;
+		exp--;
+	}
+	return (total);
+}
+
+double	ft_neg_pow(double n, double exp)
+{
+	double	total;
+
+	exp *= -1;
+	total = n;
+	while (exp > 1)
+	{
+		total *= n;
+		exp--;
+	}
+	return (1 / total);
 }

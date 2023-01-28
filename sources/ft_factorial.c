@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree_apply_suffix.c                            :+:      :+:    :+:   */
+/*   ft_factorial.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 13:08:37 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/13 14:36:15 by adantas-         ###   ########.fr       */
+/*   Created: 2022/12/07 16:30:01 by adantas-          #+#    #+#             */
+/*   Updated: 2023/01/27 22:46:02 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	ft_btree_apply_suffix(t_btree *root, void (*applyf)(void *))
+size_t	ft_factorial(size_t n)
 {
-	if (!root || !applyf)
-		return ;
-	ft_btree_apply_suffix(root->left, applyf);
-	ft_btree_apply_suffix(root->right, applyf);
-	applyf(root->content);
+	size_t	total;
+
+	if (n == 1 || n == 0)
+		return (1);
+	total = 1;
+	while (n > 1)
+	{
+		total *= n;
+		--n;
+	}
+	return (total);
 }
