@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_math_pt2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/06 13:43:20 by adantas-          #+#    #+#             */
-/*   Updated: 2022/11/04 15:19:44 by adantas-         ###   ########.fr       */
+/*   Created: 2023/01/29 11:02:00 by adantas-          #+#    #+#             */
+/*   Updated: 2023/01/29 12:55:19 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int	ft_atoi(const char *nptr)
+double	ft_sum(size_t n, ...)
 {
-	int	i;
-	int	sgn;
-	int	rslt;
+	va_list	al;
+	double	total;
+	size_t	i;
 
+	va_start(al, n);
 	i = 0;
-	rslt = 0;
-	sgn = 1;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
-		i++;
-	if (nptr[i] == '+' || ft_isdigit(nptr[i]))
-		sgn = 1;
-	else if (nptr[i] == '-')
-		sgn = -1;
-	if (nptr[i] == '+' || nptr[i] == '-')
-		i++;
-	while (ft_isdigit(nptr[i]))
+	total = 0;
+	while (i < n)
 	{
-		rslt += (nptr[i] - '0');
-		if (ft_isdigit(nptr[i + 1]))
-			rslt *= 10;
+		total += va_arg(al, double);
 		i++;
 	}
-	return (rslt * sgn);
+	va_end(al);
+	return (total);
 }

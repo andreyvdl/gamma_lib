@@ -1,16 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gnl.c                                              :+:      :+:    :+:   */
+/*   ft_gnl.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:46:45 by adantas-          #+#    #+#             */
-/*   Updated: 2022/11/04 15:23:49 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/29 13:52:04 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/gnl.h"
+
+void	cpy_1_line(char **rest, char **line);
+char	*read_fd(char **rest, char **line, int fd);
+char	*until_newline(char **line, char *buf, char **rest);
+void	secret_trick(char **rest, char *buf, size_t n);
 
 char	*get_next_line(int fd)
 {
@@ -41,7 +46,7 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-void	cpy_1_line(char **rest, char **line)
+static void	cpy_1_line(char **rest, char **line)
 {
 	size_t	i;
 	size_t	j;
@@ -61,7 +66,7 @@ void	cpy_1_line(char **rest, char **line)
 	*rest = (char *)ft_realloc_mod(rest);
 }
 
-char	*read_fd(char **rest, char **line, int fd)
+static char	*read_fd(char **rest, char **line, int fd)
 {
 	char	*buf;
 	size_t	readble;
@@ -88,7 +93,7 @@ char	*read_fd(char **rest, char **line, int fd)
 	return (*line);
 }
 
-char	*until_newline(char **line, char *buf, char **rest)
+static char	*until_newline(char **line, char *buf, char **rest)
 {
 	size_t	i;
 	size_t	j;
@@ -114,7 +119,7 @@ char	*until_newline(char **line, char *buf, char **rest)
 	return (newline);
 }
 
-void	secret_trick(char **rest, char *buf, size_t n)
+static void	secret_trick(char **rest, char *buf, size_t n)
 {
 	size_t	i;
 

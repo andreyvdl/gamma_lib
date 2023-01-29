@@ -6,12 +6,15 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:00:37 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/28 11:43:32 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/29 14:18:50 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
@@ -28,9 +31,9 @@ typedef struct s_list
 
 typedef struct s_btree
 {
+	void			*content;
 	struct s_btree	*left;
 	struct s_btree	*right;
-	void			*content;
 }	t_btree;
 
 // printf
@@ -131,12 +134,15 @@ void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 
+// get line
+char		*get_next_line(int fd);
+
 // work with pointers
 void		ft_swap(void **a, void **b);
 
 // mathemathics
-long int	ft_absolute(long int n);
 size_t		ft_factorial(size_t n);
+long int	ft_absolute(long int n);
 size_t		ft_next_prime(long int nb);
 size_t		ft_termial(unsigned long long n);
 double		ft_power(double n, long int exp);

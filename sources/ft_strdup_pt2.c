@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_pt2.c                                        :+:      :+:    :+:   */
+/*   ft_strdup_pt2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/28 12:53:25 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/29 12:33:07 by adantas-         ###   ########.fr       */
+/*   Created: 2023/01/29 10:24:46 by adantas-          #+#    #+#             */
+/*   Updated: 2023/01/29 10:56:46 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int	ft_islower(int c)
+char	**ft_matrixdup(char **matrix)
 {
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	return (0);
-}
+	size_t	i;
+	char	**copy;
 
-int	ft_isprime(size_t nb)
-{
-	else if (nb == 2 || nb == 3 || nb == 5 || nb == 7)
-		return (1);
-	if (nb % 2 == 0 || nb % 3 == 0 || nb % 5 == 0 || nb % 7 == 0)
-		return (0);
-	return (1);
-}
-
-int	ft_isupper(int c)
-{
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	return (0);
+	if (!matrix || !*matrix)
+		return (0x0);
+	i = 0;
+	while (matrix[i])
+		i++;
+	copy = (char **)ft_calloc(i + 1, sizeof(char *));
+	if (!copy)
+		return (0x0);
+	copy[0] = ft_strdup(matrix[0]);
+	while (i > 0)
+	{
+		copy[i - 1] = ft_strdup(matrix[i - 1]);
+		i--;
+	}
+	return (copy);
 }
