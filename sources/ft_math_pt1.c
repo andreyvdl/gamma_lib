@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:30:01 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/28 15:38:26 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/30 11:22:29 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ size_t	ft_termial(size_t n)
 	return (total);
 }
 
-long long	ft_next_prime(long long nb)
+ssize_t	ft_next_prime(ssize_t nb)
 {
 	if (nb <= 1)
 		return (2);
@@ -55,7 +55,7 @@ long long	ft_next_prime(long long nb)
 	while (nb % 2 == 0 || nb % 3 == 0 || nb % 5 == 0 || nb % 7 == 0)
 	{
 		if (nb < 0)
-			return (-1);
+			return (2);
 		++nb;
 	}
 	return (nb);
@@ -82,7 +82,7 @@ double	ft_power(double n, long int exp)
 	return (total);
 }
 
-double	ft_neg_pow(double n, long int exp)
+double	ft_neg_power(double n, long int exp)
 {
 	double	total;
 

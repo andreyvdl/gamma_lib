@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 14:56:17 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/28 15:20:41 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/30 15:15:49 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,25 @@ size_t	ft_strlen(const char *s)
 	while (s[i])
 		i++;
 	return (i);
+}
+
+char	*ft_strrev(char *str)
+{
+	size_t	i;
+	size_t	j;
+	char	temp;
+
+	if (!str)
+		return (0x0);
+	i = 0;
+	j = ft_strlen(str) - 1;
+	while (i < j)
+	{
+		temp = str[i];
+		str[i] = str[j];
+		str[j] = temp;
+		i++;
+		j--;
+	}
+	return (str);
 }

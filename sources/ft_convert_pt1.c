@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_convert.c                                       :+:      :+:    :+:   */
+/*   ft_convert_pt1.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 12:46:27 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/29 14:27:26 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/30 16:08:48 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,10 @@ int	ft_atoi(const char *nptr)
 	return (rslt * sgn);
 }
 
-long int	ft_btoi(char *bin)
+size_t	ft_btoi(char *bin)
 {
-	long int	total;
-	size_t		i;
+	size_t	total;
+	size_t	i;
 
 	if (!bin)
 		return (0);
@@ -100,8 +100,22 @@ long int	ft_btoi(char *bin)
 	return (total);
 }
 
-long int	ft_htoi(char *hex)
+char	*ft_itob(size_t nbr)
 {
-	long int	total;
-	
+	char	*bin;
+	size_t	i;
+
+	if (nbr == 0 || nbr == 1)
+		return (itoa(nbr));
+	bin = (char *)ft_calloc(64 + 1, sizeof(char));
+	if (!bin)
+		return (0x0);
+	i = 0;
+	while (nbr != 0)
+	{
+		bin[i] = nbr % 2 + '0';
+		nbr /= 2;
+		i++;
+	}
+	return (ft_strrev(bin));
 }

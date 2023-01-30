@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 22:57:34 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/27 23:05:59 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/30 11:19:25 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,14 @@ void	ft_free_matrix(void **matrix)
 	size_t	i;
 
 	i = -1;
-	while (matrix[++i])
+	if (matrix || *matrix)
 	{
-		free(matrix[i]);
-		matrix[i] = 0x0;
+		while (matrix[++i])
+		{
+			free(matrix[i]);
+			matrix[i] = 0x0;
+		}
+		free(matrix);
+		matrix = 0x0;
 	}
-	free(matrix);
-	matrix = 0x0;
 }

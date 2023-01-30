@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 12:53:25 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/29 12:33:07 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/30 11:16:45 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	ft_islower(int c)
 
 int	ft_isprime(size_t nb)
 {
-	else if (nb == 2 || nb == 3 || nb == 5 || nb == 7)
+	if (nb == 2 || nb == 3 || nb == 5 || nb == 7)
 		return (1);
-	if (nb % 2 == 0 || nb % 3 == 0 || nb % 5 == 0 || nb % 7 == 0)
+	else if (nb % 2 == 0 || nb % 3 == 0 || nb % 5 == 0 || nb % 7 == 0)
 		return (0);
 	return (1);
 }
