@@ -6,11 +6,12 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 08:45:39 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/28 13:49:04 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/31 11:28:51 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+#include "../includes/libft_structs.h"
 
 t_list	*ft_lstfind(t_list *begin_list, void *data_ref, int (*cmp)())
 {

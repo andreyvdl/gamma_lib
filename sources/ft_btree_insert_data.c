@@ -6,11 +6,12 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:12:40 by adantas-          #+#    #+#             */
-/*   Updated: 2022/12/13 13:16:43 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/31 10:57:46 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+#include "../includes/libft_structs.h"
 
 void	ft_btree_insert_data(t_btree **root, void *item,
 int (*cmpf)(void *, void*))

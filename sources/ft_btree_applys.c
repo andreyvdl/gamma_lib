@@ -6,11 +6,12 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:04:50 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/27 22:59:49 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/31 10:56:53 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+#include "../includes/libft_structs.h"
 
 void	ft_btree_apply_prefix(t_btree *root, void (*applyf)(void *))
 {

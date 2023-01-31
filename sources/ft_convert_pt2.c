@@ -6,11 +6,12 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 12:50:08 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/30 16:51:00 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/31 11:00:48 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+#include "../includes/libft_defines.h"
 
 size_t	ft_otoi(char *octal)
 {

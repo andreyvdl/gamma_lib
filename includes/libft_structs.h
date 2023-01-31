@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree_new.c                                     :+:      :+:    :+:   */
+/*   libft_structs.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 12:29:04 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/31 12:34:57 by adantas-         ###   ########.fr       */
+/*   Created: 2023/01/31 10:54:50 by adantas-          #+#    #+#             */
+/*   Updated: 2023/01/31 10:55:17 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
-#include "../includes/libft_structs.h"
+#ifndef LIBFT_STRUCTS_H
+# define LIBFT_STRUCTS_H
 
-t_btree	*ft_btree_new(void *item)
+typedef struct s_list
 {
-	t_btree	*new;
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
-	new = (t_btree *)malloc(sizeof(t_btree));
-	if (!new)
-		return (0x0);
-	new->content = item;
-	new->left = 0;
-	new->right = 0;
-	return (new);
-}
+typedef struct s_btree
+{
+	void			*content;
+	struct s_btree	*left;
+	struct s_btree	*right;
+}	t_btree;
+
+#endif

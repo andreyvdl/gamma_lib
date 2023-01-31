@@ -6,16 +6,16 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:46:45 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/29 13:52:04 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/31 11:24:04 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/gnl.h"
 
-void	cpy_1_line(char **rest, char **line);
-char	*read_fd(char **rest, char **line, int fd);
-char	*until_newline(char **line, char *buf, char **rest);
-void	secret_trick(char **rest, char *buf, size_t n);
+static void	cpy_1_line(char **rest, char **line);
+static char	*read_fd(char **rest, char **line, int fd);
+static char	*until_newline(char **line, char *buf, char **rest);
+static void	secret_trick(char **rest, char *buf, size_t n);
 
 char	*get_next_line(int fd)
 {

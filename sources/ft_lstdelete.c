@@ -6,11 +6,12 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 20:39:15 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/28 13:09:56 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/31 11:26:01 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+#include "../includes/libft_structs.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

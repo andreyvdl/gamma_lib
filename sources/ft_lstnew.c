@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+#include "../includes/libft_structs.h"
 
 t_list	*ft_lstnew(void *content)
 {

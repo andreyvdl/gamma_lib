@@ -6,11 +6,12 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 15:12:15 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/28 14:14:47 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/01/31 11:30:46 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+#include "../includes/libft_structs.h"
 
 size_t	ft_lstsize(t_list *lst)
 {

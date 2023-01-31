@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gnl.h                                              :+:      :+:    :+:   */
+/*   libft_defines.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 18:23:17 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/29 14:09:46 by adantas-         ###   ########.fr       */
+/*   Created: 2023/01/31 10:53:10 by adantas-          #+#    #+#             */
+/*   Updated: 2023/01/31 10:54:21 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GNL_H
-# define GNL_H
+#ifndef LIBFT_DEFINES_H
+# define LIBFT_DEFINES_H
 
-# include <stdlib.h>
-# include <unistd.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
-void	*ft_realloc_mod(char **ptr);
-char	*ft_strjoin_mod(char *s1, char *s2);
+# define HEX_L "0123456789abcdef"
+# define HEX_U "0123456789ABCDEF"
 
 #endif
