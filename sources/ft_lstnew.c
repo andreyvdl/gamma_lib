@@ -40,5 +40,5 @@ t_list	*ft_lstpush_strs(size_t size, char **strs)
 		tmp = ft_lstnew(strs[i++]);
 		ft_lstadd_back(&lst, tmp);
 	}
-	return (&lst);
+	return (lst);
 }

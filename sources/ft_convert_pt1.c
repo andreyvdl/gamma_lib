@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 12:46:27 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/31 11:00:30 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/02/01 12:43:13 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ char	*ft_itob(size_t nbr)
 	size_t	i;
 
 	if (nbr == 0 || nbr == 1)
-		return (itoa(nbr));
+		return (ft_itoa(nbr));
 	bin = (char *)ft_calloc(64 + 1, sizeof(char));
 	if (!bin)
 		return (0x0);

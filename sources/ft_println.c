@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 20:27:50 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/28 15:17:43 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/02/01 12:46:42 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_println(const char *str, ...)
 	{
 		if (str[i] == '%')
 		{
-			n += prnt_ths(str[i + 1], al);
+			n += this_flag(str[i + 1], al);
 			i++;
 		}
 		else

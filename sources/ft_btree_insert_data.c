@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:12:40 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/31 10:57:46 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/02/01 12:42:41 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 void	ft_btree_insert_data(t_btree **root, void *item,
 int (*cmpf)(void *, void*))
 {
-	t_btree	current;
+	t_btree	*current;
 
 	if (!item || !cmpf)
 		return ;
 	if (!root)
 	{
-		*root = ft_btree_create_node(item);
+		*root = ft_btree_new(item);
 		return ;
 	}
 	current = *root;
