@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree_applys.c                                  :+:      :+:    :+:   */
+/*   ft_btree_apply_suffix.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 13:04:50 by adantas-          #+#    #+#             */
-/*   Updated: 2023/02/01 12:39:47 by adantas-         ###   ########.fr       */
+/*   Created: 2023/04/17 16:35:48 by adantas-          #+#    #+#             */
+/*   Updated: 2023/04/17 16:38:06 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
-#include "../includes/libft_structs.h"
+#include "../../include/libft.h"
 
-void	ft_btree_apply_prefix(t_btree *root, void (*applyf)(void *))
-{
-	if (!root || !applyf)
-		return ;
-	applyf(root->content);
-	ft_btree_apply_prefix(root->left, applyf);
-	ft_btree_apply_prefix(root->right, applyf);
-}
-
-void	ft_btree_apply_infix(t_btree *root, void (*applyf)(void *))
-{
-	if (!root || !applyf)
-		return ;
-	ft_btree_apply_infix(root->left, applyf);
-	applyf(root->content);
-	ft_btree_apply_infix(root->right, applyf);
-}
-
+/**
+ * @brief Call a function to apply a fix after going through all nodes;
+ * 
+ * @param root The root of the tree;
+ * @param applyf The function to apply the fix;
+**/
 void	ft_btree_apply_suffix(t_btree *root, void (*applyf)(void *))
 {
-	if (!root || !applyf)
+	if (root == NULL || applyf == NULL)
 		return ;
 	ft_btree_apply_suffix(root->left, applyf);
 	ft_btree_apply_suffix(root->right, applyf);
