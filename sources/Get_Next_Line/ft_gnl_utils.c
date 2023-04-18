@@ -6,13 +6,13 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:51:38 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/31 11:10:36 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/17 22:44:08 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../../includes/libft.h"
 
-void	*ft_realloc_mod(char **ptr)
+void	*ft_realloc_free(char **ptr)
 {
 	size_t	i;
 	size_t	j;
@@ -41,7 +41,7 @@ void	*ft_realloc_mod(char **ptr)
 	return ((void *)new_ptr);
 }
 
-char	*ft_strjoin_mod(char *s1, char *s2)
+char	*ft_strjoin_free(char *s1, char *s2)
 {
 	char	*str;
 	size_t	i;

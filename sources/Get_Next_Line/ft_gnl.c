@@ -6,17 +6,25 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:46:45 by adantas-          #+#    #+#             */
-/*   Updated: 2023/02/01 12:43:45 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/17 23:24:26 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../../includes/libft.h"
 
 static void	cpy_1_line(char **rest, char **line);
 static char	*read_fd(char **rest, char **line, int fd);
 static char	*until_newline(char **line, char *buf, char **rest);
 static void	secret_trick(char **rest, char *buf, size_t n);
+void		*ft_realloc_free(char **ptr);
+char		*ft_strjoin_free(char *s1, char *s2);
 
+/**
+ * @brief Get the next line of a file descriptor;
+ * 
+ * @param fd The file descriptor to be read;
+ * @return A string containing the next line of the file descriptor;
+ */
 char	*get_next_line(int fd)
 {
 	static char	*rest[1024];
@@ -63,7 +71,7 @@ static void	cpy_1_line(char **rest, char **line)
 	while (i != 0)
 		(*line)[j--] = (*rest)[i--];
 	(*line)[j] = (*rest)[i];
-	*rest = (char *)ft_realloc_mod(rest);
+	*rest = (char *)ft_realloc_free(rest);
 }
 
 static char	*read_fd(char **rest, char **line, int fd)
@@ -86,7 +94,7 @@ static char	*read_fd(char **rest, char **line, int fd)
 			buf = 0x0;
 			return (*line);
 		}
-		*line = ft_strjoin_mod(*line, buf);
+		*line = ft_strjoin_free(*line, buf);
 	}
 	free(buf);
 	buf = 0x0;
