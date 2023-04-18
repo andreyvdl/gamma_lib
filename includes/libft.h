@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:00:37 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/31 13:01:51 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/17 23:24:04 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,8 +137,6 @@ void	ft_btree_apply_suffix(t_btree *root, void (*applyf)(void *));
 
 // DO NOT USE -function specific- DO NOT USE
 int		this_flag(unsigned char c, va_list al);
-void	*ft_realloc_mod(char **ptr);
-char	*ft_strjoin_mod(char *s1, char *s2);
 
 // rest of the original libft
 int		ft_tolower(int c);
