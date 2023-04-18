@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 10:53:10 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/31 10:54:21 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/17 23:28:40 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_DEFINES_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 4096
 # endif
 
 # define HEX_L "0123456789abcdef"
