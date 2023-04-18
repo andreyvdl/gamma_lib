@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:25:16 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/17 16:30:43 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/17 22:30:42 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 /**
  * @brief Call a function to apply a fix before going to the next node;
  * 
- * @param root The root of the tree;
- * @param applyf The function that will apply the fix;
+ * @param root A pointer to the root of the tree;
+ * @param applyf A pointer to the function that will apply the fix;
 **/
 void	ft_btree_apply_prefix(t_btree *root, void (*applyf)(void *))
 {
