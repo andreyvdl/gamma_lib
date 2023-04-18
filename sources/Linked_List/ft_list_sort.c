@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter_pt2.c                                   :+:      :+:    :+:   */
+/*   ft_list_sort.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 15:12:15 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/31 11:30:46 by adantas-         ###   ########.fr       */
+/*   Created: 2023/04/18 15:22:31 by adantas-          #+#    #+#             */
+/*   Updated: 2023/04/18 16:11:56 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
-#include "../includes/libft_structs.h"
+#include "../../includes/libft.h"
 
-size_t	ft_lstsize(t_list *lst)
+/**
+ * @brief Sorts a list from smallest to biggest using the cmp function; If any
+ * of the parameters are NULL the function does nothing; If the list is in order
+ * the function will just iterate through the list;
+ * 
+ * @param begin_list A pointer to the address of the first node of a list;
+ * @param cmp A pointer the function that will be used to compare the content of
+ * the nodes;
+ */
+void	ft_list_sort(t_list **begin_list, int (*cmp)(void *, void *))
 {
-	size_t	i;
-
-	i = 0;
-	while (lst != 0x0)
-	{
-		lst = lst->next;
-		i++;
-	}
-	return (i);
-}
-
-void	ft_lstsort(t_list **begin_list, int (*cmp)())
-{
+	void	*temporary;
 	t_list	*current;
 	t_list	*next;
-	void	*temp;
 
-	if (!begin_list || !cmp)
+	if (begin_list == NULL || *begin_list == NULL || cmp == NULL)
 		return ;
 	current = *begin_list;
 	while (current->next)
@@ -42,9 +37,9 @@ void	ft_lstsort(t_list **begin_list, int (*cmp)())
 		{
 			if (cmp(current->content, next->content) > 0)
 			{
-				temp = current->content;
+				temporary = current->content;
 				current->content = next->content;
-				next->content = temp;
+				next->content = temporary;
 			}
 			next = next->next;
 		}
