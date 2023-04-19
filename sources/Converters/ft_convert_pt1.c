@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 12:46:27 by adantas-          #+#    #+#             */
-/*   Updated: 2023/02/01 12:43:13 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/19 13:57:11 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,54 +51,9 @@ static int	decimal(int nbr)
 	return (house);
 }
 
-int	ft_atoi(const char *nptr)
-{
-	int	i;
-	int	sgn;
-	int	rslt;
 
-	i = 0;
-	rslt = 0;
-	sgn = 1;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
-		i++;
-	if (nptr[i] == '+' || ft_isdigit(nptr[i]))
-		sgn = 1;
-	else if (nptr[i] == '-')
-		sgn = -1;
-	if (nptr[i] == '+' || nptr[i] == '-')
-		i++;
-	while (ft_isdigit(nptr[i]))
-	{
-		rslt += (nptr[i] - '0');
-		if (ft_isdigit(nptr[i + 1]))
-			rslt *= 10;
-		i++;
-	}
-	return (rslt * sgn);
-}
 
-size_t	ft_btoi(char *bin)
-{
-	size_t	total;
-	size_t	i;
 
-	if (!bin)
-		return (0);
-	i = 0;
-	while ((bin[i] >= 9 && bin[i] <= 13) || bin[i] == ' ')
-		i++;
-	total = 0;
-	while (bin[i] && (bin[i] == '0' || bin[i] == '1'))
-	{
-		if (bin[i] == '1')
-			total |= 1;
-		if (bin[i + 1] == '0' || bin[i + 1] == '1')
-			total <<= 1;
-		i++;
-	}
-	return (total);
-}
 
 char	*ft_itob(size_t nbr)
 {

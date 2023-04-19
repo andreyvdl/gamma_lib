@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 14:00:28 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/18 14:54:04 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/19 16:42:48 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@
  * nodes that will be removed;
  */
 void	ft_list_remove_if(t_list **begin_list, void *data_ref, \
-int (*cmp)(void *, void *), void (*free_fct)(void *))
+							int (*cmp)(void *, void *), \
+							void (*free_fct)(void *))
 {
 	t_list	*previous;
 	t_list	*current;

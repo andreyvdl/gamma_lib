@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 08:45:39 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/18 13:03:55 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/19 16:42:22 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
  * possible, then return NULL;
  */
 t_list	*ft_list_find(t_list *begin_list, void *data_ref, \
-int (*cmp)(void *, void *))
+						int (*cmp)(void *, void *))
 {
 	t_list	*temporary;
 

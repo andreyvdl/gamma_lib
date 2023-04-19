@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 13:52:35 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/18 16:12:08 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/19 16:42:30 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
  * reference with the content of the node;
  */
 void	ft_list_foreach_if(t_list *begin_list, void (*f)(void *), \
-void *data_ref, int (*cmp)(void *, void *))
+							void *data_ref, int (*cmp)(void *, void *))
 {
 	t_list	*temporary;
 

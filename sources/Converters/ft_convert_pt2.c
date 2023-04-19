@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 12:50:08 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/31 11:00:48 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/19 16:03:53 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,30 +58,7 @@ char	*ft_itoo(size_t n)
 	return (ft_strrev(octal));
 }
 
-size_t	ft_htoi(char *hex)
-{
-	size_t	total;
-	size_t	end;
-	size_t	start;
-	size_t	i;
 
-	if (!hex)
-		return (0);
-	i = 0;
-	while ((hex[i] >= 9 && hex[i] <= 13) || hex[i] == 32)
-		i++;
-	end = i;
-	while (hex[i] && (ft_strchr("0123456789abcdef", hex[i])))
-		i++;
-	start = i;
-	total = 0;
-	while (end < start)
-	{
-		total += hex[end] * ft_power(16, start - end - 1);
-		end++;
-	}
-	return (total);
-}
 
 char	*ft_itoh(size_t n)
 {

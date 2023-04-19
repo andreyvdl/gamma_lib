@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:12:40 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/17 21:43:43 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/19 16:39:50 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static t_btree	*new_node(void *item);
 static void		connect_new_node(t_btree *previous, t_btree *new, \
-							int (*cmpf)(void *, void *));
+								int (*cmpf)(void *, void *));
 
 /**
  * @brief Insert a node in the binary tree; The low values goes to the left and
