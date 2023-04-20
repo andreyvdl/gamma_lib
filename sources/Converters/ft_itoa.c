@@ -6,30 +6,103 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 21:56:17 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/19 21:56:52 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/19 23:21:06 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+static int	get_size(int number);
+static char	*allocate_and_fill(int number, int size);
+static char	*allocate_and_fill_zero(void);
+static char	*allocate_and_fill_negative(int number, int size);
+
+/**
+ * @brief Converts an integer to a string;
+ * 
+ * @param n The integer to be converted;
+ * @return NULL if the allocation fails, otherwise the string (char *);
+ */
 char	*ft_itoa(int n)
 {
-	char	*arr;
 	int		size;
 
-	size = decimal(n);
-	arr = (char *)malloc(sizeof(char) * size + 1);
-	if (arr == 0x0)
-		return (0x0);
 	if (n == 0)
-		arr[0] = '0';
+		return (allocate_and_fill_zero());
 	else if (n < 0)
-		arr[0] = '-';
-	arr[size--] = '\0';
-	while (n != 0 && size >= 0)
 	{
-		arr[size--] = ft_absolute(n % 10) + '0';
-		n /= 10;
+		size = get_size(n);
+		return (allocate_and_fill_negative(n, size));
 	}
-	return (arr);
+	size = get_size(n);
+	return (allocate_and_fill(n, size));
+}
+
+static char	*allocate_and_fill_zero(void)
+{
+	char	*array;
+
+	array = (char *)malloc(sizeof(char) * 2);
+	if (array == NULL)
+		return (NULL);
+	array[0] = '0';
+	array[1] = '\0';
+	return (array);
+}
+
+static int	get_size(int number)
+{
+	int	size;
+
+	size = 1;
+	if (number < 0)
+	{
+		while (number < -9)
+		{
+			number /= 10;
+			size++;
+		}
+		return (size);
+	}
+	while (number > 9)
+	{
+		number /= 10;
+		size++;
+	}
+	return (size);
+}
+
+static char	*allocate_and_fill_negative(int number, int size)
+{
+	char	*array;
+
+	array = (char *)malloc(sizeof(char) * (size + 2));
+	if (array == NULL)
+		return (NULL);
+	array[0] = '-';
+	array[size + 1] = '\0';
+	while (size > 0)
+	{
+		array[size] = (number % 10) * -1 + '0';
+		number /= 10;
+		size--;
+	}
+	return (array);
+}
+
+static char	*allocate_and_fill(int number, int size)
+{
+	char	*array;
+
+	array = (char *)malloc(sizeof(char) * (size + 1));
+	if (array == NULL)
+		return (NULL);
+	array[size] = '\0';
+	while (size > 0)
+	{
+		array[size - 1] = number % 10 + '0';
+		number /= 10;
+		size--;
+	}
+	return (array);
 }
