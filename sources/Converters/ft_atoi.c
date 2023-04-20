@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 10:16:08 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/19 16:44:12 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/20 17:52:27 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	positive_int(const char *string, size_t *index);
  * 
  * @param nptr A pointer to a string to be converted;
  * @return 0 if the string is NULL or if the numbers don't make part of the
- * initial sequence; Otherwise, the converted number;
+ * initial sequence; Otherwise, the converted number (int);
  */
 int	ft_atoi(const char *nptr)
 {

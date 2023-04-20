@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 16:03:31 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 15:23:34 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/20 17:52:53 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	walk_on_whitespaces(const char *string, size_t *index);
  * 
  * @param hexadecimal A pointer to the string to be converted;
  * @return 0 if the string is NULL or if the digits and letters don't make part
- * of the initial sequence; Otherwise, the converted number;
+ * of the initial sequence; Otherwise, the converted number (int);
  */
 int	ft_htoi(const char *hexadecimal)
 {

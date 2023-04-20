@@ -6,32 +6,19 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:53:24 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 15:05:48 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/20 17:53:10 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-char	*ft_itoo(size_t n)
-{
-	char	*octal;
-	size_t	i;
-
-	if (n >= 0 && n <= 7)
-		return (ft_itoa(n));
-	octal = (char *)ft_calloc(22 + 1, sizeof(char));
-	if (!octal)
-		return (0x0);
-	i = 0;
-	while (n != 0)
-	{
-		octal[i] = n % 8 + '0';
-		n /= 8;
-		i++;
-	}
-	return (ft_strrev(octal));
-}
-
+/**
+ * @brief Converts an integer to octal
+ * 
+ * @param n The integer to be converted
+ * @return NULL if the integer is negative; Otherwise, the converted number
+ * in octal (char *);
+ */
 char	*ft_itoo(int n)
 {
 	int	size;
