@@ -10,35 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
-#include "../includes/libft_structs.h"
+#include "../../includes/libft.h"
 
+/**
+ * @brief Creates a new node for a linked list;
+ * 
+ * @param content The content of the new node;
+ * @return A pointer to the new node (t_list *);
+ */
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*nw_item;
+	t_list	*new_node;
 
-	nw_item = (t_list *)malloc(sizeof(t_list));
-	if (nw_item == 0x0)
-		return (0x0);
-	nw_item->content = content;
-	nw_item->next = 0x0;
-	return (nw_item);
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (new_node == NULL)
+		return (NULL);
+	new_node->content = content;
+	new_node->next = NULL;
+	return (new_node);
 }
 
-t_list	*ft_lstpush_strs(size_t size, char **strs)
-{
-	t_list	*lst;
-	t_list	*tmp;
-	size_t	i;
 
-	if (!strs || !*strs)
-		return (0x0);
-	lst = ft_lstnew(strs[0]);
-	i = 1;
-	while (size-- > 0)
-	{
-		tmp = ft_lstnew(strs[i++]);
-		ft_lstadd_back(&lst, tmp);
-	}
-	return (lst);
-}

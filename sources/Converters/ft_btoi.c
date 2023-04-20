@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 13:55:19 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/19 16:44:31 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/19 21:54:57 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int	ft_btoi(const char *binary)
 	index = 0;
 	walk_on_whitespaces(binary, &index);
 	number = 0;
-	while (binary[index] != '\0' && \
-	(binary[index] == '0' || binary[index] == '1'))
+	while (binary[index] != '\0' \
+			&& (binary[index] == '0' || binary[index] == '1'))
 	{
 		number <<= 1;
 		if (binary[index] == '1')

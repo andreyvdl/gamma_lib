@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 16:03:31 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/19 17:59:35 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/19 21:57:33 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,27 +20,27 @@ static void	walk_on_whitespaces(const char *string, size_t *index);
  * optional whitespaces, followed by an optional indicator of hexadecimal,
  * followed by a sequence of digits or letters from A to F;
  * 
- * @param hexadecmal A pointer to the string to be converted;
+ * @param hexadecimal A pointer to the string to be converted;
  * @return 0 if the string is NULL or if the digits and letters don't make part
  * of the initial sequence; Otherwise, the converted number;
  */
-int	ft_htoi(const char *hexadecmal)
+int	ft_htoi(const char *hexadecimal)
 {
 	int		number;
 	int		temporary;
 	size_t	index;
 
-	if (hexadecmal == NULL)
+	if (hexadecimal == NULL)
 		return (0);
 	index = 0;
-	walk_on_whitespaces(hexadecmal, &index);
-	if (hexadecmal[index] == '0'\
-		&& (hexadecmal[index + 1] == 'x' || hexadecmal[index + 1] == 'X'))
+	walk_on_whitespaces(hexadecimal, &index);
+	if (hexadecimal[index] == '0' \
+		&& (hexadecimal[index + 1] == 'x' || hexadecimal[index + 1] == 'X'))
 		index += 2;
 	number = 0;
-	while (hexadecmal[index] != '\0')
+	while (hexadecimal[index] != '\0')
 	{
-		temporary = get_decimal_value(hexadecmal[index]);
+		temporary = get_decimal_value(hexadecimal[index]);
 		if (temporary == -1)
 			break ;
 		number = number * 16 + temporary;
