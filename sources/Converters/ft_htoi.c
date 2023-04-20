@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 16:03:31 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/19 21:57:33 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/20 15:23:34 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ static void	walk_on_whitespaces(const char *string, size_t *index)
 	{
 		if (string[*index] == '\0')
 			break ;
-		else if (string[*index] == '+' || string[*index] == '-')
-			break ;
-		else if (string[*index] >= '0' && string[*index] <= '9')
+		else if ((string[*index] >= 'A' && string[*index] <= 'F') \
+				|| (string[*index] >= 'a' && string[*index] <= 'f') \
+				|| (string[*index] >= '0' && string[*index] <= '9'))
 			break ;
 		(*index)++;
 	}

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 21:56:17 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/19 23:21:06 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/20 15:10:48 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static int	get_size(int number);
 static char	*allocate_and_fill(int number, int size);
-static char	*allocate_and_fill_zero(void);
 static char	*allocate_and_fill_negative(int number, int size);
 
 /**
@@ -27,27 +26,13 @@ char	*ft_itoa(int n)
 {
 	int		size;
 
-	if (n == 0)
-		return (allocate_and_fill_zero());
-	else if (n < 0)
+	if (n < 0)
 	{
 		size = get_size(n);
 		return (allocate_and_fill_negative(n, size));
 	}
 	size = get_size(n);
 	return (allocate_and_fill(n, size));
-}
-
-static char	*allocate_and_fill_zero(void)
-{
-	char	*array;
-
-	array = (char *)malloc(sizeof(char) * 2);
-	if (array == NULL)
-		return (NULL);
-	array[0] = '0';
-	array[1] = '\0';
-	return (array);
 }
 
 static int	get_size(int number)
@@ -83,7 +68,7 @@ static char	*allocate_and_fill_negative(int number, int size)
 	array[size + 1] = '\0';
 	while (size > 0)
 	{
-		array[size] = (number % 10) * -1 + '0';
+		array[size] = (number % 10) + '0';
 		number /= 10;
 		size--;
 	}
