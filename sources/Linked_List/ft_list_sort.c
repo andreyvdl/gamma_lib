@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:22:31 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/18 16:11:56 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/20 21:46:17 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 /**
  * @brief Sorts a list from smallest to biggest using the cmp function; If any
- * of the parameters are NULL the function does nothing; If the list is in order
- * the function will just iterate through the list;
+ * 			of the parameters are NULL the function does nothing; If the list is
+ * 			in order the function will just iterate through the list;
  * 
  * @param begin_list A pointer to the address of the first node of a list;
  * @param cmp A pointer the function that will be used to compare the content of
- * the nodes;
+ * 			the nodes;
  */
 void	ft_list_sort(t_list **begin_list, int (*cmp)(void *, void *))
 {

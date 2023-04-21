@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 10:28:36 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/18 11:11:46 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/20 21:46:43 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /**
  * @brief Deletes and frees the entire list; If the list is NULL, nothing will
- * happen;
+ * 			happen;
  * 
  * @param lst The address to the first node of a list;
  * @param del A pointer to a funciton that will clear the content of the node;

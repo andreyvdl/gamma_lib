@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_math_pt2.c                                      :+:      :+:    :+:   */
+/*   ft_termial.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 11:02:00 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/30 16:02:26 by adantas-         ###   ########.fr       */
+/*   Created: 2023/04/20 23:48:39 by adantas-          #+#    #+#             */
+/*   Updated: 2023/04/21 00:01:29 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../../includes/libft.h"
 
-double	ft_sum(size_t n, ...)
+/**
+ * @brief Calculates the termial of a given number;
+ * @warning Big numbers can cause an overflow;
+ * 
+ * @param n The number to calculate the termial;
+ * @return The total of the termial (unsigned int);
+ */
+unsigned int	ft_termial(unsigned int n)
 {
-	va_list	al;
-	double	total;
-	size_t	i;
+	unsigned int	total;
 
-	va_start(al, n);
-	i = 0;
-	total = 0;
-	while (i < n)
+	total = 1;
+	while (n > 1)
 	{
-		total += va_arg(al, double);
-		i++;
+		total += n;
+		n--;
 	}
-	va_end(al);
 	return (total);
 }

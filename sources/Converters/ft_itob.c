@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 09:47:02 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 12:48:33 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/20 21:41:28 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static char	*allocate_and_fill(int nbr, int size);
  *
  * @param nbr the integer to be converted;
  * @return NULL if the allocation fails or if nbr is negative, otherwise the
- * string (char *);
+ * 			string (char *);
  */
 char	*ft_itob(int nbr)
 {

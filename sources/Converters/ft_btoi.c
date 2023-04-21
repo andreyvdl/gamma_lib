@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 13:55:19 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 17:52:46 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/20 21:40:44 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ static void	walk_on_whitespaces(const char *string, size_t *index);
 
 /**
  * @brief Convert a binary string to an integer; The string is composed of
- * optional whitespaces, followed by a sequence of 0s and 1s; Only the first
- * sequence of digits is converted;
+ * 			optional whitespaces, followed by a sequence of 0s and 1s; Only the
+ * 			first sequence of digits is converted;
  * 
  * @param binary A pointer to the string to be converted;
  * @return The converted binary (int); 0 If the string is NULL or if the digits don't
- * make part of the initial sequence;
+ * 			make part of the initial sequence;
  */
 int	ft_btoi(const char *binary)
 {

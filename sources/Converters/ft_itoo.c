@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:53:24 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 17:53:10 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/20 21:41:40 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  * 
  * @param n The integer to be converted
  * @return NULL if the integer is negative; Otherwise, the converted number
- * in octal (char *);
+ * 			in octal (char *);
  */
 char	*ft_itoo(int n)
 {

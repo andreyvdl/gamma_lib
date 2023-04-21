@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 16:18:26 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/18 17:33:26 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/20 21:49:40 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ static void		add_node_to_new_list(t_list **new_list, t_list *new_node);
 
 /**
  * @brief Creates a copy of the list, applying the function f to each node
- * content; If allocation fails, the function returns NULL and deletes the
- * new list;
+ * 			content; If allocation fails, the function returns NULL and deletes
+ * 			the new list;
  * 
  * @param lst A pointer to the first node of the list;
  * @param f A pointer to the function that applies the fix to the node content;

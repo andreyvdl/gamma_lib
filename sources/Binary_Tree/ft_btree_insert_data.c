@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:12:40 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/19 16:39:50 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/20 21:39:29 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ static void		connect_new_node(t_btree *previous, t_btree *new, \
 
 /**
  * @brief Insert a node in the binary tree; The low values goes to the left and
- * the high or equal values goes to the right; If the root is NULL, the function
- * will create a new node and set it as the root;
+ * 			the high or equal values goes to the right; If the root is NULL, the
+ * 			function will create a new node and set it as the root;
  * 
  * @param root The root of the binary tree;
  * @param item Will be the content of the new node;

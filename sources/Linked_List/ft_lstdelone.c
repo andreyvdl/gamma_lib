@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 11:13:49 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/18 11:17:13 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/20 21:48:21 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /**
  * @brief Deletes and frees a node from a list; If the node is NULL nothing will
- * happen;
+ * 			happen;
  * 
  * @param lst A pointer to the node to be deleted;
  * @param del A pointer to the function that will delete the content of the node;

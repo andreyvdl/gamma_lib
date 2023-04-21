@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 12:49:09 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 14:52:36 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/20 21:41:36 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static char	*allocate_and_fill(int number, int size);
  * 
  * @param n The integer to be converted;
  * @return NULL if allocation fails or if n is negative, otherwise the string
- * (char *);
+ * 			(char *);
  */
 char	*ft_itoh(int n)
 {

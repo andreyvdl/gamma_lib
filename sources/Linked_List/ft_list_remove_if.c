@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 14:00:28 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/19 16:42:48 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/20 21:45:56 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 /**
  * @brief Removes nodes from the list if the content of the node matches the
- * data_ref; If any of the parameters is NULL, the function does nothing;
+ * 			data_ref; If any of the parameters is NULL, the function does
+ * 			nothing;
  * 
  * @param begin_list The address of the pointer to the first node of the list;
  * @param data_ref The data to be compared with the content of the nodes;
  * @param cmp The function that will be used to compare the content of the nodes
- * with the data_ref;
+ * 			with the data_ref;
  * @param free_fct The function that will be used to free the content of the
- * nodes that will be removed;
+ * 			nodes that will be removed;
  */
 void	ft_list_remove_if(t_list **begin_list, void *data_ref, \
 							int (*cmp)(void *, void *), \

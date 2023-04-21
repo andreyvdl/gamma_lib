@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 16:03:31 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 17:52:53 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/20 21:41:15 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@ static void	walk_on_whitespaces(const char *string, size_t *index);
 
 /**
  * @brief Convert a hexadecimal string to an integer; The string is composed of
- * optional whitespaces, followed by an optional indicator of hexadecimal,
- * followed by a sequence of digits or letters from A to F;
+ * 			optional whitespaces, followed by an optional indicator of
+ * 			hexadecimal, followed by a sequence of digits or letters from A to
+ * 			F;
  * 
  * @param hexadecimal A pointer to the string to be converted;
  * @return 0 if the string is NULL or if the digits and letters don't make part
- * of the initial sequence; Otherwise, the converted number (int);
+ * 			of the initial sequence; Otherwise, the converted number (int);
  */
 int	ft_htoi(const char *hexadecimal)
 {
