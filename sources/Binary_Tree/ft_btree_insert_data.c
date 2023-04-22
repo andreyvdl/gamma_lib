@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:12:40 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 21:39:29 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/21 22:29:49 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void		connect_new_node(t_btree *previous, t_btree *new, \
  * @param item Will be the content of the new node;
  * @param cmpf function that compares the content of the nodes;
  */
-void	ft_btree_insert_data(t_btree **root, void *item,
+void	ft_btree_insert_data(t_btree **root, void *item, \
 							int (*cmpf)(void *, void *))
 {
 	t_btree	*current;

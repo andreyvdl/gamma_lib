@@ -6,11 +6,15 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 22:51:49 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 23:47:49 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/21 13:43:42 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+
+static double	validate_zeros(double number, int exponent);
+static double	negative_exponent(double number, int exponent);
+static double	positive_exponent(double number, int exponent);
 
 /**
  * @brief Make the power of number by exponent;

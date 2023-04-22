@@ -6,11 +6,14 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:53:24 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 21:41:40 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/21 13:18:07 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+
+static int	get_size(int number);
+static char	*allocate_and_fill(int number, int size);
 
 /**
  * @brief Converts an integer to octal

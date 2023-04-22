@@ -6,13 +6,14 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 16:03:31 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 21:41:15 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/21 13:16:42 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
 static int	get_decimal_value(char character);
+static int	convert_hexadecimal(const char *hexadecimal, size_t index);
 static void	walk_on_whitespaces(const char *string, size_t *index);
 
 /**
@@ -27,8 +28,6 @@ static void	walk_on_whitespaces(const char *string, size_t *index);
  */
 int	ft_htoi(const char *hexadecimal)
 {
-	int		number;
-	int		temporary;
 	size_t	index;
 
 	if (hexadecimal == NULL)
@@ -38,16 +37,7 @@ int	ft_htoi(const char *hexadecimal)
 	if (hexadecimal[index] == '0' \
 		&& (hexadecimal[index + 1] == 'x' || hexadecimal[index + 1] == 'X'))
 		index += 2;
-	number = 0;
-	while (hexadecimal[index] != '\0')
-	{
-		temporary = get_decimal_value(hexadecimal[index]);
-		if (temporary == -1)
-			break ;
-		number = number * 16 + temporary;
-		index++;
-	}
-	return (number);
+	return (convert_hexadecimal(hexadecimal, index));
 }
 
 static void	walk_on_whitespaces(const char *string, size_t *index)
@@ -75,4 +65,21 @@ static int	get_decimal_value(char character)
 	else if (character >= 'A' && character <= 'F')
 		return (character - 'A' + 10);
 	return (-1);
+}
+
+static int	convert_hexadecimal(const char *hexadecimal, size_t index)
+{
+	int	temporary;
+	int	number;
+
+	number = 0;
+	while (hexadecimal[index] != '\0')
+	{
+		temporary = get_decimal_value(hexadecimal[index]);
+		if (temporary == -1)
+			break ;
+		number = number * 16 + temporary;
+		index++;
+	}
+	return (number);
 }

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 09:47:02 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 21:41:28 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/21 11:25:35 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,5 @@ static char	*allocate_and_fill(int nbr, int size)
 		nbr /= 2;
 		size--;
 	}
-
+	return (array);
 }

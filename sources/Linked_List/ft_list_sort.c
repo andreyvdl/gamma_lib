@@ -6,11 +6,13 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:22:31 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 21:46:17 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/21 13:39:34 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+
+static void	swap_content(t_list **current, t_list **next);
 
 /**
  * @brief Sorts a list from smallest to biggest using the cmp function; If any
@@ -23,7 +25,6 @@
  */
 void	ft_list_sort(t_list **begin_list, int (*cmp)(void *, void *))
 {
-	void	*temporary;
 	t_list	*current;
 	t_list	*next;
 
@@ -36,13 +37,18 @@ void	ft_list_sort(t_list **begin_list, int (*cmp)(void *, void *))
 		while (next)
 		{
 			if (cmp(current->content, next->content) > 0)
-			{
-				temporary = current->content;
-				current->content = next->content;
-				next->content = temporary;
-			}
+				swap_content(&current, &next);
 			next = next->next;
 		}
 		current = current->next;
 	}
+}
+
+static void	swap_content(t_list **current, t_list **next)
+{
+	void	*temporary;
+
+	temporary = (*current)->content;
+	(*current)->content = (*next)->content;
+	(*next)->content = temporary;
 }

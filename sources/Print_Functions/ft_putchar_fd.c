@@ -1,43 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put.c                                           :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/08 14:36:28 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/28 14:41:35 by adantas-         ###   ########.fr       */
+/*   Created: 2023/04/21 11:33:44 by adantas-          #+#    #+#             */
+/*   Updated: 2023/04/21 13:10:58 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../../includes/libft.h"
 
-void	ft_putchar(char c)
+/**
+ * @brief Print a character to a file descriptor;
+ * 
+ * @param c The character to be printed;
+ * @param fd The number of file descriptor;
+ */
+void	ft_putchar_fd(char c, int fd)
 {
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str)
-{
-	size_t	i;
-
-	i = -1;
-	while (str[++i])
-		write(1, &str[i], 1);
-}
-
-void	ft_putnbr(int n)
-{
-	char	c;
-
-	if (n < 0)
-	{
-		ft_putchar('-');
-		if (n < -9)
-			ft_putnbr((n / 10) * -1);
-	}
-	if (n > 9)
-		ft_putnbr(n / 10);
-	c = ft_absolute(n % 10) + '0';
-	ft_putchar(c);
+	write(fd, &c, 1);
 }

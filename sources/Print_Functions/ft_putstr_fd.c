@@ -1,46 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_fd.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 15:13:44 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/28 14:39:55 by adantas-         ###   ########.fr       */
+/*   Created: 2023/04/21 14:55:53 by adantas-          #+#    #+#             */
+/*   Updated: 2023/04/21 15:14:29 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../../includes/libft.h"
 
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
-
+/**
+ * @brief Prints the string s to the file descriptor fd;
+ * 
+ * @param s A pointer to the string to be printed;
+ * @param fd The number of the file descriptor;
+ * 
+ */
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (*s)
-		ft_putchar_fd(*s++, fd);
-}
+	size_t	index;
 
-void	ft_putendl_fd(char *s, int fd)
-{
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
-}
-
-void	ft_putnbr_fd(int n, int fd)
-{
-	char	c;
-
-	if (n < 0)
+	if (s == NULL)
+		return ;
+	index = 0;
+	while (s[index] != '\0')
 	{
-		ft_putchar_fd('-', fd);
-		if (n < -9)
-			ft_putnbr_fd((n / 10) * -1, fd);
+		write(fd, &s[index], 1);
+		index++;
 	}
-	if (n > 9)
-		ft_putnbr_fd(n / 10, fd);
-	c = ft_absolute(n % 10) + '0';
-	ft_putchar_fd(c, fd);
 }

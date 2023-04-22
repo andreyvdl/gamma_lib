@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 21:56:17 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 15:10:48 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/21 11:12:25 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static char	*allocate_and_fill_negative(int number, int size)
 	array[size + 1] = '\0';
 	while (size > 0)
 	{
-		array[size] = (number % 10) + '0';
+		array[size] = (number % 10) * -1 + '0';
 		number /= 10;
 		size--;
 	}

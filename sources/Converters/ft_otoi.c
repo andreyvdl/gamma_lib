@@ -6,11 +6,13 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:11:54 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 21:41:56 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/21 22:27:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+
+static void	walk_on_whitespaces(const char *octal, size_t *index);
 
 /**
  * @brief Converts a string in octal to an integer; The string is composed of
@@ -40,7 +42,7 @@ int	ft_otoi(const char *octal)
 	return (number);
 }
 
-static void	walk_on_whitespcaes(const char *octal, size_t *index)
+static void	walk_on_whitespaces(const char *octal, size_t *index)
 {
 	while (octal[*index] == ' ' || octal[*index] == '\t' || \
 			octal[*index] == '\n' || octal[*index] == '\v' || \

@@ -6,18 +6,18 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:46:45 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/19 17:25:06 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/21 23:13:28 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-void		*ft_realloc_free(char **ptr);
 char		*ft_strjoin_free(char *s1, char *s2);
+void		*ft_realloc_free(char **ptr);
 static char	*read_fd(char **rest, char **line, int fd);
+static char	*until_newline(char **line, char *buf, char **rest);
 static void	cpy_1_line(char **rest, char **line);
 static void	secret_trick(char **rest, char *buf, size_t n);
-static char	*until_newline(char **line, char *buf, char **rest);
 
 /**
  * @brief Get the next line of a file descriptor;
