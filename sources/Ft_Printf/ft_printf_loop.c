@@ -6,29 +6,32 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 16:47:23 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/21 22:47:13 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/24 10:02:33 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-int			print_char(char character);
-int			print_char_fd(int file_descriptor, char character);
-int			print_hexadecimal_lowercase(size_t number);
-int			print_hexadecimal_lowercase_fd(int file_descriptor, size_t number);
-int			print_hexadecimal_uppercase(size_t number);
-int			print_hexadecimal_uppercase_fd(int file_descriptor, size_t number);
-int			print_int_fd(int file_descriptor, int number);
-int			print_int(int number);
-int			print_ptr_fd(int file_descriptor, size_t address);
-int			print_ptr(size_t address);
-int			print_string(char *string);
-int			print_string_fd(int file_descriptor, char *string);
-int			print_unsigned_int(unsigned int number);
-int			print_unsigned_int_fd(int file_descriptor, unsigned int number);
-static int	print_argument(char character, va_list arg_list);
-static int	print_argument_fd(int file_descriptor, char character, \
-								va_list arg_list);
+int				print_char(char character);
+int				print_char_fd(int file_descriptor, char character);
+int				print_hexadecimal_lowercase(size_t number);
+int				print_hexadecimal_lowercase_fd(int file_descriptor, \
+												size_t number);
+int				print_hexadecimal_uppercase(size_t number);
+int				print_hexadecimal_uppercase_fd(int file_descriptor, \
+												size_t number);
+int				print_int_fd(int file_descriptor, int number);
+int				print_int(int number);
+int				print_ptr_fd(int file_descriptor, size_t address);
+int				print_ptr(size_t address);
+int				print_string(char *string);
+int				print_string_fd(int file_descriptor, char *string);
+int				print_unsigned_int(unsigned int number);
+int				print_unsigned_int_fd(int file_descriptor, unsigned int number);
+static size_t	get_string_size(const char *string);
+static int		print_argument(char character, va_list arg_list);
+static int		print_argument_fd(int file_descriptor, char character, \
+									va_list arg_list);
 
 int	loop_through_string(const char *string, va_list arg_list)
 {
@@ -38,7 +41,7 @@ int	loop_through_string(const char *string, va_list arg_list)
 
 	index = 0;
 	chars_printed = 0;
-	string_size = ft_strlen(string);
+	string_size = get_string_size(string);
 	while (index < string_size)
 	{
 		if (string[index] == '%')
@@ -51,6 +54,16 @@ int	loop_through_string(const char *string, va_list arg_list)
 		index++;
 	}
 	return (chars_printed);
+}
+
+static size_t	get_string_size(const char *string)
+{
+	size_t	index;
+
+	index = 0;
+	while (string[index] != '\0')
+		index++;
+	return (index);
 }
 
 static int	print_argument(char character, va_list arg_list)
@@ -84,7 +97,7 @@ int	loop_through_string_fd(int file_descriptor, const char *string, \
 
 	index = 0;
 	chars_printed = 0;
-	string_size = ft_strlen(string);
+	string_size = get_string_size(string);
 	while (index < string_size)
 	{
 		if (string[index] == '%')

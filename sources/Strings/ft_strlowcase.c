@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup_pt2.c                                    :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 10:24:46 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/29 10:56:46 by adantas-         ###   ########.fr       */
+/*   Created: 2023/04/24 12:19:28 by adantas-          #+#    #+#             */
+/*   Updated: 2023/04/24 12:22:49 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../../includes/libft.h"
 
-char	**ft_matrixdup(char **matrix)
+/**
+ * @brief Converts all uppercase letters of a string to lowercase;
+ * 
+ * @param str A pointer to the string;
+ * @return the string converted (char *);
+ */
+char	*ft_strlowcase(char *str)
 {
-	size_t	i;
-	char	**copy;
+	size_t	index;
 
-	if (!matrix || !*matrix)
-		return (0x0);
-	i = 0;
-	while (matrix[i])
-		i++;
-	copy = (char **)ft_calloc(i + 1, sizeof(char *));
-	if (!copy)
-		return (0x0);
-	copy[0] = ft_strdup(matrix[0]);
-	while (i > 0)
+	if (str == NULL)
+		return (NULL);
+	index = 0;
+	while (str[index] != '\0')
 	{
-		copy[i - 1] = ft_strdup(matrix[i - 1]);
-		i--;
+		if (str[index] >= 'A' && str[index] <= 'Z')
+			str[index] += 32;
+		index++;
 	}
-	return (copy);
+	return (str);
 }

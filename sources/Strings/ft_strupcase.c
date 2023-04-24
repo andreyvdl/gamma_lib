@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp_pt2.c                                    :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/28 15:24:04 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/28 15:24:35 by adantas-         ###   ########.fr       */
+/*   Created: 2023/04/24 12:20:50 by adantas-          #+#    #+#             */
+/*   Updated: 2023/04/24 13:51:38 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../../includes/libft.h"
 
-char	*ft_strstr(const char *str, const char *to_find)
+/**
+ * @brief Converts all lowercase letters of a string to uppercase;
+ * 
+ * @param str A pointer to the string;
+ * @return the string converted (char *);
+ */
+char	*ft_strupcase(char *str)
 {
-	size_t	i;
-	size_t	j;
+	size_t	index;
 
-	if (!to_find[0])
-		return ((char *)str);
-	else if (!to_find[0] && !str[0])
-		return ((char *)str);
-	i = -1;
-	while (str[++i])
+	if (str == NULL)
+		return (NULL);
+	index = 0;
+	while (str[index] != '\0')
 	{
-		j = 0;
-		while (str[i + j] == to_find[j])
-		{
-			if (to_find[j + 1] == 0)
-				return (&((char *)str)[i]);
-			j++;
-		}
+		if (str[index] >= 'a' && str[index] <= 'z')
+			str[index] -= 32;
+		index++;
 	}
-	return (0x0);
+	return (str);
 }

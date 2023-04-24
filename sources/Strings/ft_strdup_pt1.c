@@ -1,49 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strdup_pt1.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 13:43:19 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/28 15:30:00 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/24 17:42:34 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strdup(const char *s)
-{
-	char	*copy;
-	int		i;
 
-	if (s == 0x0)
-		return (0x0);
-	copy = (char *)malloc(ft_strlen(s) + 1);
-	if (copy == 0x0)
-		return (0x0);
-	i = 0;
-	while (s[i] != '\0')
-	{
-		copy[i] = ((char *)s)[i];
-		i++;
-	}
-	copy[i] = '\0';
-	return (copy);
-}
 
-char	*ft_strcpy(char *dst, char *src)
-{
-	size_t	i;
 
-	i = -1;
-	if (!dst || !src)
-		return (NULL);
-	while (src[++i])
-		dst[i] = src[i];
-	dst[i] = 0;
-	return (dst);
-}
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

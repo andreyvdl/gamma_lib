@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 21:56:17 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/21 11:12:25 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/24 11:55:12 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static char	*allocate_and_fill_negative(int number, int size);
  */
 char	*ft_itoa(int n)
 {
-	int		size;
+	int	size;
 
 	if (n < 0)
 	{
