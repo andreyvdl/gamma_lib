@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:00:37 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/25 11:04:16 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/25 16:41:01 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,17 @@ unsigned int	ft_factorial(unsigned int n);
 unsigned int	ft_next_prime(int nb);
 double			ft_power(double number, int exponent);
 unsigned int	ft_termial(unsigned int n);
+
+void			*ft_calloc(size_t nmemb, size_t size);
+void			*ft_memchr(const void *s, int c, size_t n);
+void			*ft_memcpy(void *dst, const void *src, size_t n);
+void			*ft_memmove(void *dst, const void *src, size_t n);
+void			*ft_memset(void *s, int c, size_t n);
+void			ft_bzero(void *s, size_t n);
+void			ft_free(void **pointer);
+void			ft_free_matrix(void ***matrix);
+int				ft_memcmp(const void *s1, const void *s2, size_t n);
+void			ft_swap(void **pointer1, void **pointer2);
 
 void			ft_putchar(char c);
 void			ft_putchar_fd(char c, int fd);
