@@ -6,14 +6,15 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 09:53:42 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/25 10:46:18 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/25 11:13:10 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-static char	*create_duplicate(char const *string, size_t size, \
-								char (*f)(unsigned int, char));
+static size_t	get_string_size(char const *string);
+static char		*create_duplicate(char const *string, size_t size, \
+									char (*f)(unsigned int, char));
 
 /**
  * @brief Applies the function f to each character of the string s to create a
@@ -32,6 +33,16 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	size = get_string_size(s);
 	return (create_duplicate(s, size, f));
+}
+
+static size_t	get_string_size(char const *string)
+{
+	size_t	index;
+
+	index = 0;
+	while (string[index] != '\0')
+		index++;
+	return (index);
 }
 
 static char	*create_duplicate(char const *string, size_t size, \

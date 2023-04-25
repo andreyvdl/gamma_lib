@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 14:56:17 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/25 10:46:53 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/25 10:57:11 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		index++;
 	}
 }
-
-
-
-
-
-
