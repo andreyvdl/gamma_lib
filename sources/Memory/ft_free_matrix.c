@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_frees.c                                         :+:      :+:    :+:   */
+/*   ft_free_matrix.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/27 22:57:34 by adantas-          #+#    #+#             */
-/*   Updated: 2023/01/30 11:19:25 by adantas-         ###   ########.fr       */
+/*   Created: 2023/04/25 11:17:07 by adantas-          #+#    #+#             */
+/*   Updated: 2023/04/25 11:25:08 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../../includes/libft.h"
 
-void	ft_free(void *ptr)
+/**
+ * @brief Free a matrix and set every pointer to NULL;
+ * 
+ * @param matrix A pointer to the address of the matrix to be freed;
+ */
+void	ft_free_matrix(void ***matrix)
 {
-	if (ptr)
-	{
-		free(ptr);
-		ptr = 0x0;
-	}
-}
+	size_t	line;
 
-void	ft_free_matrix(void **matrix)
-{
-	size_t	i;
-
-	i = -1;
-	if (matrix || *matrix)
+	line = 0;
+	if (*matrix != NULL && **matrix != NULL)
 	{
-		while (matrix[++i])
+		while (*matrix[line] != NULL)
 		{
-			free(matrix[i]);
-			matrix[i] = 0x0;
+			free(*matrix[line]);
+			*matrix[line] = NULL;
+			line++;
 		}
-		free(matrix);
-		matrix = 0x0;
+		free(*matrix);
+		*matrix = NULL;
 	}
 }
