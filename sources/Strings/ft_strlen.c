@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 14:56:17 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/25 10:46:53 by adantas-         ###   ########.fr       */
+/*   Created: 2023/04/25 09:51:20 by adantas-          #+#    #+#             */
+/*   Updated: 2023/04/25 09:53:34 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
 /**
- * @brief Applies the function f to each character of the string s;
+ * @brief Calculate the length of the string s;
  * 
- * @attention If the string or the function pointer is NULL, the function does
- * 				nothing;
- * @param s A pointer to the string to be iterated;
- * @param f A pointer to the function to be applied to each character;
+ * @param s A pointer to the string to be measured;
+ * @return The length of the string (size_t); If s is NULL, returns 0;
  */
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+size_t	ft_strlen(const char *s)
 {
-	unsigned int	index;
+	size_t	index;
 
-	if (s == NULL || f == NULL)
-		return ;
+	if (s == NULL)
+		return (0);
 	index = 0;
 	while (s[index] != '\0')
-	{
-		(*f)(index, &s[index]);
 		index++;
-	}
+	return (index);
 }
-
-
-
-
-
-

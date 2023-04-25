@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 19:51:30 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/24 22:34:03 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/25 09:45:30 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static char		*copy_trimmed(char const *string, size_t start, size_t end);
 static size_t	get_string_size(char const *string);
 
 /**
- * @brief Removes the character of set in s1, creating a new strin in the
+ * @brief Removes the character of set in s1, creating a new string in the
  * 			process;
  * 
  * @param s1 A pointer to the string to be trimmed;
