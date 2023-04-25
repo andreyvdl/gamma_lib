@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:00:37 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/24 17:07:11 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/24 21:31:03 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <limits.h>
+# include <stdbool.h>
 # include "libft_defines.h"
 # include "libft_structs.h"
 
