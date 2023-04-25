@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:00:37 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/25 16:41:01 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/25 17:52:34 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,15 @@ void			ft_btree_apply_prefix(t_btree *root, void (*applyf)(void *));
 void			ft_btree_apply_suffix(t_btree *root, void (*applyf)(void *));
 void			ft_btree_insert_data(t_btree **root, void *item, \
 								int (*cmpf)(void *, void *));
+
+int				ft_isalnum(int c);
+int				ft_isalpha(int c);
+int				ft_isascii(int c);
+int				ft_isdigit(int c);
+int				ft_islower(int c);
+int				ft_isprime(int nb);
+int				ft_isprint(int c);
+int				ft_isupper(int c);
 
 char			*ft_itoa(int n);
 char			*ft_itob(int nbr);
@@ -68,6 +77,7 @@ void			ft_lstmerge(t_list **begin_list1, t_list *begin_list2);
 void			ft_lstreverse(t_list **begin_list);
 size_t			ft_lstsize(t_list *lst);
 
+int				ft_absolute_number(int number);
 unsigned int	ft_factorial(unsigned int n);
 unsigned int	ft_next_prime(int nb);
 double			ft_power(double number, int exponent);
@@ -114,5 +124,8 @@ size_t			ft_strlcat(char *dst, const char *src, size_t size);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 size_t			ft_strlen(const char *s);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
+
+int				ft_tolower(int c);
+int				ft_toupper(int c);
 
 #endif
