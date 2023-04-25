@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:00:37 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/24 21:31:03 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/25 11:04:16 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,22 @@
 # include "libft_defines.h"
 # include "libft_structs.h"
 
+t_btree			*ft_btree_create_node(void *item);
+void			*ft_btree_search_item(t_btree *root, void *data_ref, \
+										int (*cmpf)(void *, void *));
 void			ft_btree_apply_infix(t_btree *root, void (*applyf)(void *));
 void			ft_btree_apply_prefix(t_btree *root, void (*applyf)(void *));
 void			ft_btree_apply_suffix(t_btree *root, void (*applyf)(void *));
-t_btree			*ft_btree_create_node(void *item);
 void			ft_btree_insert_data(t_btree **root, void *item, \
 								int (*cmpf)(void *, void *));
-void			*ft_btree_search_item(t_btree *root, void *data_ref, \
-										int (*cmpf)(void *, void *));
 
-int				ft_atoi(const char *nptr);
-int				ft_btoi(const char *binary);
-int				ft_htoi(const char *hexadecimal);
 char			*ft_itoa(int n);
 char			*ft_itob(int nbr);
 char			*ft_itoh(int n);
 char			*ft_itoo(int n);
+int				ft_atoi(const char *nptr);
+int				ft_btoi(const char *binary);
+int				ft_htoi(const char *hexadecimal);
 int				ft_otoi(const char *octal);
 
 int				ft_printf(const char *string, ...);
@@ -48,9 +48,13 @@ char			*get_next_line(int fd);
 t_list			*ft_list_at(t_list *begin_list, size_t nbr);
 t_list			*ft_list_find(t_list *begin_list, void *data_ref, \
 								int (*cmp)(void *, void *));
+t_list			*ft_list_push_strs(size_t size, char **strs);
+t_list			*ft_lstlast(t_list *lst);
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), \
+							void (*del)(void *));
+t_list			*ft_lstnew(void *content);
 void			ft_list_foreach_if(t_list *begin_list, void (*f)(void *), \
 									void *data_ref, int (*cmp)(void *, void *));
-t_list			*ft_list_push_strs(size_t size, char **strs);
 void			ft_list_remove_if(t_list **begin_list, void *data_ref, \
 									int (*cmp)(void *, void *), \
 									void (*free_fct)(void *));
@@ -60,11 +64,7 @@ void			ft_lstadd_front(t_list **lst, t_list *new);
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
-t_list			*ft_lstlast(t_list *lst);
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), \
-							void (*del)(void *));
 void			ft_lstmerge(t_list **begin_list1, t_list *begin_list2);
-t_list			*ft_lstnew(void *content);
 void			ft_lstreverse(t_list **begin_list);
 size_t			ft_lstsize(t_list *lst);
 
@@ -80,5 +80,28 @@ void			ft_putnbr(int n);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_putstr(char *str);
 void			ft_putstr_fd(char *s, int fd);
+
+char			**ft_matrixdup(char **matrix);
+char			*ft_strcapitalize(char *str);
+char			*ft_strcat(char *dest, char *src);
+char			*ft_strchr(const char *s, int c);
+char			*ft_strcpy(char *dst, char *src);
+char			*ft_strdup(const char *s);
+char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strlowcase(char *str);
+char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char			*ft_strnstr(const char *big, const char *little, size_t len);
+char			*ft_strrchr(const char *s, int c);
+char			*ft_strrev(char *str);
+char			*ft_strstr(const char *str, const char *to_find);
+char			*ft_strtrim(char const *s1, char const *set);
+char			*ft_strupcase(char *str);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
+int				ft_strcmp(char *s1, char *s2);
+void			ft_striteri(char *s, void (*f)(unsigned int, char*));
+size_t			ft_strlcat(char *dst, const char *src, size_t size);
+size_t			ft_strlcpy(char *dst, const char *src, size_t size);
+size_t			ft_strlen(const char *s);
+int				ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif
