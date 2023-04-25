@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprime.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 17:35:43 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/25 17:41:48 by adantas-         ###   ########.fr       */
+/*   Created: 2023/04/25 17:44:06 by adantas-          #+#    #+#             */
+/*   Updated: 2023/04/25 17:45:00 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
 /**
- * @brief Checks if the number is prime;
+ * @brief Converts an upper-case letter to the corresponding lower-case letter;
  * 
- * @param nb the number to be checked;
- * @return true if the number is prime; otherwise, false;
+ * @param c The character to be converted;
+ * @return The corresponding lower-case letter if c is an upper-case letter;
+ * 			otherwise, the letter is returned unchanged;
  */
-int	ft_isprime(int nb)
+int	ft_tolower(int c)
 {
-	if (nb == 2 || nb == 3 || nb == 5 || nb == 7)
-		return (true);
-	else if (nb % 2 == 0 || nb % 3 == 0 || nb % 5 == 0 || nb % 7 == 0)
-		return (false);
-	return (true);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }
