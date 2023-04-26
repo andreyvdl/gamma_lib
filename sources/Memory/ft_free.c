@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_defines.h                                    :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 10:53:10 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/24 21:37:11 by adantas-         ###   ########.fr       */
+/*   Created: 2023/04/25 11:19:26 by adantas-          #+#    #+#             */
+/*   Updated: 2023/04/25 11:25:24 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_DEFINES_H
-# define LIBFT_DEFINES_H
+#include "../../includes/libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4096
-# endif
-
-#endif
+/**
+ * @brief Free a pointer and set it to NULL;
+ * 
+ * @param pointer A pointer to the address of the pointer to be freed;
+ */
+void	ft_free(void **pointer)
+{
+	if (*pointer != NULL)
+	{
+		free(*pointer);
+		*pointer = NULL;
+	}
+}

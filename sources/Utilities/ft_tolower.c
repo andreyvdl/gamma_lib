@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_defines.h                                    :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 10:53:10 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/24 21:37:11 by adantas-         ###   ########.fr       */
+/*   Created: 2023/04/25 17:44:06 by adantas-          #+#    #+#             */
+/*   Updated: 2023/04/25 17:45:00 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_DEFINES_H
-# define LIBFT_DEFINES_H
+#include "../../includes/libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4096
-# endif
-
-#endif
+/**
+ * @brief Converts an upper-case letter to the corresponding lower-case letter;
+ * 
+ * @param c The character to be converted;
+ * @return The corresponding lower-case letter if c is an upper-case letter;
+ * 			otherwise, the letter is returned unchanged;
+ */
+int	ft_tolower(int c)
+{
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
+}

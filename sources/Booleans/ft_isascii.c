@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_defines.h                                    :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 10:53:10 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/24 21:37:11 by adantas-         ###   ########.fr       */
+/*   Created: 2023/04/25 17:01:05 by adantas-          #+#    #+#             */
+/*   Updated: 2023/04/25 17:21:03 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_DEFINES_H
-# define LIBFT_DEFINES_H
+#include "../../includes/libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4096
-# endif
+/**
+ * @brief Checks for an ASCII character;
+ * 
+ * @param c the character to be checked;
+ * @return true if the character is an ASCII character; otherwise, false;
+ */
+int	ft_isascii(int c)
+{
+	const char	del_ascii = 127;
 
-#endif
+	if (c >= '\0' && c <= del_ascii)
+		return (true);
+	return (false);
+}

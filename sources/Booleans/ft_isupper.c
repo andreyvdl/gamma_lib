@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_defines.h                                    :+:      :+:    :+:   */
+/*   ft_isupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 10:53:10 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/24 21:37:11 by adantas-         ###   ########.fr       */
+/*   Created: 2023/04/25 17:36:45 by adantas-          #+#    #+#             */
+/*   Updated: 2023/04/25 17:37:13 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_DEFINES_H
-# define LIBFT_DEFINES_H
+#include "../../includes/libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4096
-# endif
-
-#endif
+/**
+ * @brief Checks for an uppercase letter;
+ * 
+ * @param c The character to be checked;
+ * @return true if the character is uppercase; otherwise, false;
+ */
+int	ft_isupper(int c)
+{
+	if (c >= 'A' && c <= 'Z')
+		return (true);
+	return (false);
+}

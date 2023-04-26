@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_defines.h                                    :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 10:53:10 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/24 21:37:11 by adantas-         ###   ########.fr       */
+/*   Created: 2023/04/21 13:03:56 by adantas-          #+#    #+#             */
+/*   Updated: 2023/04/21 13:09:19 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_DEFINES_H
-# define LIBFT_DEFINES_H
+#include "../../includes/libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4096
-# endif
-
-#endif
+/**
+ * @brief Print a character to the standard output;
+ * 
+ * @param c The character to be printed;
+ */
+void	ft_putchar(char c)
+{
+	write(STDOUT_FILENO, &c, 1);
+}

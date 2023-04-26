@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_defines.h                                    :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 10:53:10 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/24 21:37:11 by adantas-         ###   ########.fr       */
+/*   Created: 2023/04/25 09:51:20 by adantas-          #+#    #+#             */
+/*   Updated: 2023/04/25 09:53:34 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_DEFINES_H
-# define LIBFT_DEFINES_H
+#include "../../includes/libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4096
-# endif
+/**
+ * @brief Calculate the length of the string s;
+ * 
+ * @param s A pointer to the string to be measured;
+ * @return The length of the string (size_t); If s is NULL, returns 0;
+ */
+size_t	ft_strlen(const char *s)
+{
+	size_t	index;
 
-#endif
+	if (s == NULL)
+		return (0);
+	index = 0;
+	while (s[index] != '\0')
+		index++;
+	return (index);
+}

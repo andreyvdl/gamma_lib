@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_defines.h                                    :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 10:53:10 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/24 21:37:11 by adantas-         ###   ########.fr       */
+/*   Created: 2023/04/18 11:13:49 by adantas-          #+#    #+#             */
+/*   Updated: 2023/04/20 21:48:21 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_DEFINES_H
-# define LIBFT_DEFINES_H
+#include "../../includes/libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4096
-# endif
-
-#endif
+/**
+ * @brief Deletes and frees a node from a list; If the node is NULL nothing will
+ * 			happen;
+ * 
+ * @param lst A pointer to the node to be deleted;
+ * @param del A pointer to the function that will delete the content of the node;
+ */
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
+{
+	if (lst == NULL)
+		return ;
+	del(lst->content);
+	free(lst);
+}
