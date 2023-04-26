@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:44:39 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/24 17:21:29 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/25 21:53:05 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static size_t	get_matrix_size(char **matrix);
 static size_t	get_string_size(char *string);
-static void		clear_matrix(char **matrix);
+static void		clear_matrix(char ***matrix);
 static void		malloc_and_duplicate(char **matrix, char **copy, size_t line);
 
 /**
@@ -39,7 +39,7 @@ char	**ft_matrixdup(char **matrix)
 		malloc_and_duplicate(matrix, copy, line);
 		if (copy[line] == NULL)
 		{
-			clear_matrix(copy);
+			clear_matrix(&copy);
 			return (NULL);
 		}
 		line++;
@@ -85,15 +85,15 @@ static size_t	get_string_size(char *string)
 	return (size);
 }
 
-static void	clear_matrix(char **matrix)
+static void	clear_matrix(char ***matrix)
 {
 	size_t	line;
 
 	line = 0;
-	while (matrix[line] != NULL)
+	while (*matrix[line] != NULL)
 	{
-		free(matrix[line]);
+		free(*matrix[line]);
 		line++;
 	}
-	free(matrix);
+	free(*matrix);
 }

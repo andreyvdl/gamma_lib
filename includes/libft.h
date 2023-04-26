@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:00:37 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/25 17:52:34 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/25 22:35:29 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ void			ft_putstr(char *str);
 void			ft_putstr_fd(char *s, int fd);
 
 char			**ft_matrixdup(char **matrix);
+char			**ft_split(char const *s, char c);
 char			*ft_strcapitalize(char *str);
 char			*ft_strcat(char *dest, char *src);
 char			*ft_strchr(const char *s, int c);

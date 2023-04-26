@@ -6,11 +6,11 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 23:02:05 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/25 17:42:18 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/25 22:36:55 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../../includes/libft.h"
 
 /**
  * @brief Get the absolute value of a number if it is a negative;
