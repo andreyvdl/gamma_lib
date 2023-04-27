@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 20:50:53 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/19 21:52:05 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/04/26 19:56:26 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@ t_list	*ft_list_push_strs(size_t size, char **strs)
 	if (strs == NULL || *strs == NULL)
 		return (NULL);
 	list = NULL;
-	while (size > -1)
+	while (size != 0)
 	{
 		add_to_the_end(&list, create_new_node(strs[size]));
 		size--;
 	}
+	add_to_the_end(&list, create_new_node(strs[size]));
 	return (list);
 }
 
