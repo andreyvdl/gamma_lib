@@ -6,42 +6,39 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:55:55 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/21 19:50:45 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/11 01:34:43 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-static int	print_address_as_hexadecimal(size_t address);
-static char	get_hexadecimal_digit(size_t address);
+static char	get_hexadecimal_digit(size_t address)
+{
+	char	byte;
+
+	if (address < 10)
+		byte = address + '0';
+	else
+		byte = address + 'a' - 10;
+	return (byte);
+}
+
+static int	print_address_as_hexadecimal(size_t address)
+{
+	int		bytes_printed;
+	char	byte;
+
+	bytes_printed = 0;
+	if (address > 15)
+		bytes_printed += print_address_as_hexadecimal(address / 16);
+	byte = get_hexadecimal_digit(address % 16);
+	bytes_printed += (int)write(STDOUT_FILENO, &byte, 1);
+	return (bytes_printed);
+}
 
 int	print_ptr(size_t address)
 {
 	if (address == 0)
 		return ((int)write(STDOUT_FILENO, "(nil)", 5));
 	return (print_address_as_hexadecimal(address));
-}
-
-static int	print_address_as_hexadecimal(size_t address)
-{
-	int		chars_printed;
-	char	character;
-
-	chars_printed = 0;
-	if (address > 15)
-		chars_printed += print_address_as_hexadecimal(address / 16);
-	character = get_hexadecimal_digit(address % 16);
-	chars_printed += (int)write(STDOUT_FILENO, &character, 1);
-	return (chars_printed);
-}
-
-static char	get_hexadecimal_digit(size_t address)
-{
-	char	character;
-
-	if (address < 10)
-		character = address + '0';
-	else
-		character = address + 'a' - 10;
-	return (character);
 }

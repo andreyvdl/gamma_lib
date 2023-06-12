@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:20:45 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 21:39:43 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/10 21:48:56 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ void	*ft_btree_search_item(t_btree *root, void *data_ref, \
 {
 	void	*content;
 
-	content = NULL;
-	if (root == NULL || data_ref == NULL || cmpf == NULL)
-		return (NULL);
+	content = 0x0;
+	if (root == 0x0 || data_ref == 0x0 || cmpf == 0x0)
+		return (0x0);
 	content = ft_btree_search_item(root->left, data_ref, cmpf);
-	if (content != NULL)
+	if (content != 0x0)
 		return (content);
 	if (cmpf(root->content, data_ref) == 0)
 		return (root->content);
 	content = ft_btree_search_item(root->right, data_ref, cmpf);
-	if (content != NULL)
+	if (content != 0x0)
 		return (content);
-	return (NULL);
+	return (0x0);
 }

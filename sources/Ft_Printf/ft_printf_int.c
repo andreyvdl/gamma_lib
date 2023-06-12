@@ -6,14 +6,39 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:23:02 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/21 21:49:29 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/11 01:26:55 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-static int	print_negative_number(int number);
-static int	print_positive_number(int number);
+static int	print_positive_number(int number)
+{
+	int		bytes_printed;
+	char	byte;
+
+	bytes_printed = 0;
+	if (number > 9)
+		bytes_printed += print_positive_number(number / 10);
+	byte = (number % 10) + '0';
+	bytes_printed += (int)write(STDOUT_FILENO, &byte, 1);
+	return (bytes_printed);
+}
+
+static int	print_negative_number(int number)
+{
+	int		bytes_printed;
+
+	bytes_printed = 0;
+	bytes_printed += (int)write(STDOUT_FILENO, "-", 1);
+	if (number == INT_MIN)
+	{
+		bytes_printed += (int)write(STDOUT_FILENO, "2147483648", 10);
+		return (bytes_printed);
+	}
+	bytes_printed += print_positive_number(number * -1);
+	return (bytes_printed);
+}
 
 int	print_int(int number)
 {
@@ -21,33 +46,3 @@ int	print_int(int number)
 		return (print_negative_number(number));
 	return (print_positive_number(number));
 }
-
-static int	print_negative_number(int number)
-{
-	int		chars_printed;
-
-	chars_printed = 0;
-	chars_printed += (int)write(STDOUT_FILENO, "-", 1);
-	if (number == INT_MIN)
-	{
-		chars_printed += (int)write(STDOUT_FILENO, "2147483648", 10);
-		return (chars_printed);
-	}
-	chars_printed += print_positive_number(number * -1);
-	return (chars_printed);
-}
-
-static int	print_positive_number(int number)
-{
-	int		chars_printed;
-	char	character;
-
-	chars_printed = 0;
-	if (number > 9)
-		chars_printed += print_positive_number(number / 10);
-	character = (number % 10) + '0';
-	chars_printed += (int)write(STDOUT_FILENO, &character, 1);
-	return (chars_printed);
-}
-
-

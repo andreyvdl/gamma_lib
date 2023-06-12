@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:40:26 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/25 16:33:47 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/11 16:01:11 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,11 @@
  */
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	index;
 	char	*temporary;
 
-	if (s == NULL || n == 0)
+	if (s == 0x0 || n == 0)
 		return ;
 	temporary = (char *)s;
-	index = 0;
-	while (index < n)
-	{
-		temporary[index] = '\0';
-		index++;
-	}
+	while (n--)
+		*temporary++ = '\0';
 }

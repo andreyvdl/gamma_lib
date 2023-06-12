@@ -6,18 +6,20 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:11:45 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/21 20:20:18 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/11 00:54:55 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-int	print_char(char character)
+int	print_char(char byte)
 {
-	return ((int)write(STDOUT_FILENO, &character, 1));
+	return ((int)write(STDOUT_FILENO, &byte, 1));
 }
 
-int	print_char_fd(int file_descriptor, char character)
+int	print_char_fd(int file_descriptor, char byte)
 {
-	return ((int)write(file_descriptor, &character, 1));
+	if (file_descriptor >= 0)
+		return ((int)write(file_descriptor, &byte, 1));
+	return (0);
 }

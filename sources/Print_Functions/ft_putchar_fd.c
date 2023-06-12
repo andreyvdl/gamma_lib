@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 11:33:44 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/21 13:10:58 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/11 17:47:21 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@
  */
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	if (fd > -1)
+		write(fd, &c, 1);
 }

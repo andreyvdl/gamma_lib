@@ -6,13 +6,21 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 09:56:08 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 21:49:55 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/11 15:44:38 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-static t_list	*reach_end_of_list(t_list *list);
+static t_list	*reach_end_of_list(t_list *list)
+{
+	t_list	*walker;
+
+	walker = list;
+	while (walker->next != 0x0)
+		walker = walker->next;
+	return (walker);
+}
 
 /**
  * @brief Merge the end of a list to the start of another list; If the first
@@ -26,23 +34,13 @@ void	ft_lstmerge(t_list **begin_list1, t_list *begin_list2)
 {
 	t_list	*current;
 
-	if (begin_list2 == NULL)
+	if (begin_list2 == 0x0)
 		return ;
-	else if (*begin_list1 == NULL)
+	else if (*begin_list1 == 0x0)
 	{
 		*begin_list1 = begin_list2;
 		return ;
 	}
 	current = reach_end_of_list(*begin_list1);
 	current->next = begin_list2;
-}
-
-static t_list	*reach_end_of_list(t_list *list)
-{
-	t_list	*walker;
-
-	walker = list;
-	while (walker->next != NULL)
-		walker = walker->next;
-	return (walker);
 }

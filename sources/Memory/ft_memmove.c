@@ -6,17 +6,26 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 13:55:02 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/25 15:25:29 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/11 17:15:50 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
 
-static void	copy_front_to_end(unsigned char *destiny, unsigned char *source, \
-								size_t n);
 static void	copy_end_to_front(unsigned char *destiny, unsigned char *source, \
-								size_t n);
+								size_t n)
+{
+	while (n--)
+		*(destiny + n + 1) = *(source + n + 1);
+}
+
+static void	copy_front_to_end(unsigned char *destiny, unsigned char *source, \
+								size_t n)
+{
+	while (n--)
+		*destiny++ = *source++;
+}
 
 /**
  * @brief Copies n bytes from memory area src to memory area dst;
@@ -30,39 +39,16 @@ static void	copy_end_to_front(unsigned char *destiny, unsigned char *source, \
  */
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	unsigned char	*temporary_destiny;
-	unsigned char	*temporary_source;
+	unsigned char	*temp_dst;
+	unsigned char	*temp_src;
 
-	if (dst == NULL || src == NULL)
+	if (dst == 0x0 || src == 0x0)
 		return (dst);
-	temporary_destiny = (unsigned char *)dst;
-	temporary_source = (unsigned char *)src;
-	if (temporary_destiny < temporary_source)
-		copy_front_to_end(temporary_destiny, temporary_source, n);
+	temp_dst = (unsigned char *)dst;
+	temp_src = (unsigned char *)src;
+	if (temp_dst < temp_src)
+		copy_front_to_end(temp_dst, temp_src, n);
 	else
-		copy_end_to_front(temporary_destiny, temporary_source, n);
+		copy_end_to_front(temp_dst, temp_src, n);
 	return (dst);
-}
-
-static void	copy_front_to_end(unsigned char *destiny, unsigned char *source, \
-								size_t n)
-{
-	size_t	index;
-
-	index = 0;
-	while (index < n)
-	{
-		destiny[index] = source[index];
-		index++;
-	}
-}
-
-static void	copy_end_to_front(unsigned char *destiny, unsigned char *source, \
-								size_t n)
-{
-	while (n > 0)
-	{
-		destiny[n] = source[n];
-		n--;
-	}
 }

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:35:48 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/17 22:32:04 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/10 21:47:10 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 **/
 void	ft_btree_apply_suffix(t_btree *root, void (*applyf)(void *))
 {
-	if (root == NULL || applyf == NULL)
+	if (root == 0x0 || applyf == 0x0)
 		return ;
 	ft_btree_apply_suffix(root->left, applyf);
 	ft_btree_apply_suffix(root->right, applyf);

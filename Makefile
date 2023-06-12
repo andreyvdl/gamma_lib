@@ -59,14 +59,14 @@ RESET=\033[0m
 
 OBJ_LOOP=@printf "${YELLOW}COMPILING: ${CYAN}${notdir $<}          "
 OBJ_RESET=@printf "\r${RESET}"
-OBJ_COMP=@echo "${BLUE}ALL OBJECTS COMPILED!       ${RESET}"
+OBJ_COMP=@echo -e "${BLUE}ALL OBJECTS COMPILED!       ${RESET}"
 RM_FOREACH=@${foreach file, ${LIBFT_OBJECTS}, printf \
 				"${RED}DELETING:  ${CYAN}${notdir ${file}}          \r"; \
 				rm -rf ${file};}
 OBJ_DELETED=@printf "${RED}ALL OBJECTS DELETED!${RESET}     \n"
 PROGRAM_DELETED=@printf "${YELLOW}LIBFT.A ${PURPLE}DELETED!${RESET}\n"
-PROGRAM_CREATED=@echo "${GREEN}LIBFT.A ${WHITE}CREATED!${RESET}"
-RECOMPILATED=@echo "${BLACK}RECOMPILATION COMPLETED!"
+PROGRAM_CREATED=@echo -e "${GREEN}LIBFT.A ${WHITE}CREATED!${RESET}"
+RECOMPILATED=@echo -e "${BLACK}RECOMPILATION COMPLETED!"
 # RULES ========================================================================
 
 all: ${NAME}

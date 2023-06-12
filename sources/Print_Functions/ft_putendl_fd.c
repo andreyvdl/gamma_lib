@@ -6,13 +6,20 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 13:05:47 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/21 14:35:50 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/11 17:57:18 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-static void	write_string(char *s, int fd);
+static void	write_string(char *string, int file_descriptor)
+{
+	while (*string)
+	{
+		write(file_descriptor, string, 1);
+		string++;
+	}
+}
 
 /**
  * @brief Print a string to the file descriptor, followed by a new line;
@@ -23,19 +30,10 @@ static void	write_string(char *s, int fd);
  */
 void	ft_putendl_fd(char *s, int fd)
 {
-	if (s != NULL)
-		write_string(s, fd);
-	write(fd, "\n", 1);
-}
-
-static void	write_string(char *string, int file_descriptor)
-{
-	size_t	index;
-
-	index = 0;
-	while (string[index] != '\0')
+	if (fd > -1)
 	{
-		write(file_descriptor, &string[index], 1);
-		index++;
+		if (s != 0x0)
+			write_string(s, fd);
+		write(fd, "\n", 1);
 	}
 }

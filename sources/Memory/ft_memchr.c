@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 11:26:38 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/26 19:57:06 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/11 16:42:22 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,17 @@
  */
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t			index;
 	unsigned char	*temporary;
 	unsigned char	character;
 
-	if (s == NULL || n == 0)
-		return (NULL);
+	if (s == 0x0 || n == 0)
+		return (0x0);
 	temporary = (unsigned char *)s;
 	character = (unsigned char)c;
-	index = 0;
-	while (index < n)
+	while (n--)
 	{
-		if (temporary[index] == character)
-			return ((void *)s + index);
-		index++;
+		if (*temporary++ == character)
+			return ((void *)((temporary--) - (unsigned char *)s));
 	}
-	return (NULL);
+	return (0x0);
 }

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 16:11:23 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 21:49:22 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/11 14:32:26 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,11 @@
  */
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*temporary;
-
-	if (lst == NULL)
+	if (lst == 0x0)
 		return ;
-	temporary = lst;
-	while (temporary != 0x0)
+	while (lst)
 	{
-		f(temporary->content);
-		temporary = temporary->next;
+		f(lst->content);
+		lst = lst->next;
 	}
 }

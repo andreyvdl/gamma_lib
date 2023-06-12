@@ -6,13 +6,18 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 09:49:33 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 21:46:25 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/11 14:30:15 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-static t_list	*get_last_node(t_list *list);
+static t_list	*get_last_node(t_list *list)
+{
+	while (list->next != 0x0)
+		list = list->next;
+	return (list);
+}
 
 /**
  * @brief Add a new node at the end of the list; If the list is NULL, the new
@@ -26,9 +31,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
 
-	if (new == NULL)
+	if (new == 0x0)
 		return ;
-	else if (*lst == NULL)
+	else if (*lst == 0x0)
 	{
 		*lst = new;
 		return ;
@@ -36,11 +41,4 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	last = *lst;
 	last = get_last_node(last);
 	last->next = new;
-}
-
-static t_list	*get_last_node(t_list *list)
-{
-	while (list->next != NULL)
-		list = list->next;
-	return (list);
 }

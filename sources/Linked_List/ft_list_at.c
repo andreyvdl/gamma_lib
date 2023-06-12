@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 11:23:36 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 21:44:42 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/11 21:41:02 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,18 @@
 t_list	*ft_list_at(t_list *begin_list, size_t nbr)
 {
 	size_t	counter;
-	t_list	*temporary;
 
-	if (begin_list == NULL)
-		return (NULL);
+	if (begin_list == 0x0)
+		return (0x0);
 	if (nbr == 0)
 		return (begin_list);
 	counter = 0;
-	temporary = begin_list;
 	while (counter < nbr)
 	{
-		if (temporary == NULL)
-			return (NULL);
-		temporary = temporary->next;
+		if (begin_list == 0x0)
+			return (0x0);
+		begin_list = begin_list->next;
 		counter++;
 	}
-	return (temporary);
+	return (begin_list);
 }

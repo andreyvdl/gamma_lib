@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 08:45:39 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 21:44:49 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/11 13:30:13 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,13 @@
 t_list	*ft_list_find(t_list *begin_list, void *data_ref, \
 						int (*cmp)(void *, void *))
 {
-	t_list	*temporary;
-
-	if (begin_list == NULL || data_ref == NULL || cmp == NULL)
-		return (NULL);
-	temporary = begin_list;
-	while (temporary != NULL)
+	if (begin_list == 0x0 || data_ref == 0x0 || cmp == 0x0)
+		return (0x0);
+	while (begin_list)
 	{
-		if (cmp(temporary->content, data_ref) == 0)
-			return (temporary);
-		temporary = temporary->next;
+		if (cmp(begin_list->content, data_ref) == 0)
+			return (begin_list);
+		begin_list = begin_list->next;
 	}
-	return (NULL);
+	return (0x0);
 }

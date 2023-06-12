@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 13:18:53 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/25 16:34:10 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/11 17:42:42 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@
  */
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	index;
+	char	*temp;
 
-	if (n == 0 || s == NULL)
+	if (n == 0 || s == 0x0)
 		return (s);
-	index = 0;
-	while (index != n)
-		((char *)s)[index++] = c;
+	temp = (char *)s;
+	while (n--)
+		*temp++ = c;
 	return (s);
 }

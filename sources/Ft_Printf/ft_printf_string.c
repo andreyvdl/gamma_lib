@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:15:01 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/21 22:13:11 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/11 01:32:30 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,30 @@
 
 int	print_string(char *string)
 {
-	size_t	index;
-	int		chars_printed;
+	int	bytes_printed;
 
-	if (string == NULL)
+	if (string == 0x0)
 		return ((int)write(STDOUT_FILENO, "(null)", 6));
-	index = 0;
-	chars_printed = 0;
-	while (string[index] != '\0')
+	bytes_printed = 0;
+	while (*string)
 	{
-		write(STDOUT_FILENO, &string[index], 1);
-		chars_printed++;
-		index++;
+		bytes_printed += (int)write(STDOUT_FILENO, string, 1);
+		string++;
 	}
-	return (chars_printed);
+	return (bytes_printed);
 }
 
 int	print_string_fd(int file_descriptor, char *string)
 {
-	size_t	index;
-	int		chars_printed;
+	int		bytes_printed;
 
-	if (string == NULL)
+	if (string == 0x0)
 		return ((int)write(file_descriptor, "(null)", 6));
-	index = 0;
-	chars_printed = 0;
-	while (string[index] != '\0')
+	bytes_printed = 0;
+	while (*string)
 	{
-		write(file_descriptor, &string[index], 1);
-		chars_printed++;
-		index++;
+		bytes_printed += (int)write(file_descriptor, string, 1);
+		string++;
 	}
-	return (chars_printed);
+	return (bytes_printed);
 }

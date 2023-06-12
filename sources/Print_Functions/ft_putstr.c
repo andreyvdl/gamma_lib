@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 15:16:27 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/21 16:22:23 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/11 18:08:12 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,11 @@
  */
 void	ft_putstr(char *str)
 {
-	size_t	index;
-
-	if (str == NULL)
+	if (str == 0x0)
 		return ;
-	index = 0;
-	while (str[index] != '\0')
+	while (*str)
 	{
-		write(STDOUT_FILENO, &str[index], 1);
-		index++;
+		write(STDOUT_FILENO, str, 1);
+		str++;
 	}
 }

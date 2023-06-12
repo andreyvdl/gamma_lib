@@ -6,13 +6,24 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 21:52:31 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 22:37:42 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/11 15:44:23 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-static unsigned int	basic_cases(int nb);
+static unsigned int	basic_cases(int nb)
+{
+	if (nb < 2)
+		return (2);
+	else if (nb == 2)
+		return (3);
+	else if (nb < 5)
+		return (5);
+	else if (nb < 7)
+		return (7);
+	return (11);
+}
 
 /**
  * @brief Find the next prime of the received number;
@@ -33,17 +44,4 @@ unsigned int	ft_next_prime(int nb)
 		nb++;
 	}
 	return (nb);
-}
-
-static unsigned int	basic_cases(int nb)
-{
-	if (nb < 2)
-		return (2);
-	else if (nb == 2)
-		return (3);
-	else if (nb < 5)
-		return (5);
-	else if (nb < 7)
-		return (7);
-	return (11);
 }

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:46:45 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/21 23:13:28 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/11 02:56:44 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	secret_trick(char **rest, char *buf, size_t n);
  */
 char	*get_next_line(int fd)
 {
-	static char	*rest[1024];
+	static char	*rest[4096];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0))

@@ -6,13 +6,18 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 13:55:19 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/21 10:46:51 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/10 23:39:51 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-static void	walk_on_whitespaces(const char *string, size_t *index);
+static void	walk_on_whitespaces(const char **string)
+{
+	while (**string == ' ' || **string == '\t' || **string == '\n' || \
+	**string == '\v' || **string == '\f' || **string == '\r')
+		(*string)++;
+}
 
 /**
  * @brief Convert a binary string to an integer; The string is composed of
@@ -26,34 +31,16 @@ static void	walk_on_whitespaces(const char *string, size_t *index);
 int	ft_btoi(const char *binary)
 {
 	int		number;
-	size_t	index;
 
-	if (binary == NULL)
+	if (binary == 0x0)
 		return (0);
-	index = 0;
-	walk_on_whitespaces(binary, &index);
+	walk_on_whitespaces(&binary);
 	number = 0;
-	while (binary[index] != '\0' \
-			&& (binary[index] == '0' || binary[index] == '1'))
+	while (*binary == '0' || *binary == '1')
 	{
 		number <<= 1;
-		if (binary[index] == '1')
+		if (*binary++ == '1')
 			number |= 1;
-		index++;
 	}
 	return (number);
-}
-
-static void	walk_on_whitespaces(const char *string, size_t *index)
-{
-	while (string[*index] == ' ' || string[*index] == '\t' || \
-			string[*index] == '\n' || string[*index] == '\v' || \
-			string[*index] == '\f' || string[*index] == '\r')
-	{
-		if (string[*index] == '\0')
-			break ;
-		else if (string[*index] >= '0' && string[*index] <= '1')
-			break ;
-		(*index)++;
-	}
 }

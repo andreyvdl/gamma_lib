@@ -6,16 +6,58 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:44:39 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/25 21:53:05 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/11 21:43:27 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-static size_t	get_matrix_size(char **matrix);
-static size_t	get_string_size(char *string);
-static void		clear_matrix(char ***matrix);
-static void		malloc_and_duplicate(char **matrix, char **copy, size_t line);
+static size_t	get_matrix_size(char **matrix)
+{
+	size_t	size;
+
+	size = 0;
+	while (*(matrix + size))
+		size++;
+	return (size);
+}
+
+static size_t	get_string_size(char *string)
+{
+	size_t	size;
+
+	size = 0;
+	while (*(string + size))
+		size++;
+	return (size);
+}
+
+static void	malloc_and_duplicate(char *matrix, char **copy, size_t line)
+{
+	*(copy + line) = (char *)malloc((get_string_size(matrix) + 1) * \
+								sizeof(char));
+	if (*(copy + line) == 0x0)
+		return ;
+	while (*matrix)
+	{
+		**(copy + line) = *matrix++;
+		(*(copy + line))++;
+	}
+	**(copy + line) = '\0';
+}
+
+static void	clear_matrix(char **matrix)
+{
+	char	**temp;
+
+	temp = matrix;
+	while (*temp)
+	{
+		free(*temp);
+		temp++;
+	}
+	free(matrix);
+}
 
 /**
  * @brief Duplicates a matrix of strings;
@@ -28,72 +70,23 @@ char	**ft_matrixdup(char **matrix)
 	char	**copy;
 	size_t	line;
 
-	if (matrix == NULL || *matrix == NULL)
-		return (NULL);
+	if (matrix == 0x0 || *matrix == 0x0)
+		return (0x0);
 	copy = (char **)malloc((get_matrix_size(matrix) + 1) * sizeof(char *));
-	if (copy == NULL)
-		return (NULL);
+	if (copy == 0x0)
+		return (0x0);
 	line = 0;
-	while (matrix[line] != NULL)
+	while (*matrix)
 	{
-		malloc_and_duplicate(matrix, copy, line);
-		if (copy[line] == NULL)
+		malloc_and_duplicate(*matrix, copy, line);
+		if (*(copy + line) == 0x0)
 		{
-			clear_matrix(&copy);
-			return (NULL);
+			clear_matrix(copy);
+			return (0x0);
 		}
 		line++;
+		matrix++;
 	}
-	copy[line] = NULL;
+	*(copy + line) = 0x0;
 	return (copy);
-}
-
-static size_t	get_matrix_size(char **matrix)
-{
-	size_t	size;
-
-	size = 0;
-	while (matrix[size] != NULL)
-		size++;
-	return (size);
-}
-
-static void	malloc_and_duplicate(char **matrix, char **copy, size_t line)
-{
-	size_t	index;
-
-	copy[line] = (char *)malloc((get_string_size(matrix[line]) + 1) * \
-								sizeof(char));
-	if (copy[line] == NULL)
-		return ;
-	index = 0;
-	while (matrix[line][index] != '\0')
-	{
-		copy[line][index] = matrix[line][index];
-		index++;
-	}
-	copy[line][index] = '\0';
-}
-
-static size_t	get_string_size(char *string)
-{
-	size_t	size;
-
-	size = 0;
-	while (string[size] != '\0')
-		size++;
-	return (size);
-}
-
-static void	clear_matrix(char ***matrix)
-{
-	size_t	line;
-
-	line = 0;
-	while (*matrix[line] != NULL)
-	{
-		free(*matrix[line]);
-		line++;
-	}
-	free(*matrix);
 }
