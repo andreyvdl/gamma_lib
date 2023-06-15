@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:04:22 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/24 16:25:52 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/14 21:49:44 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,3 @@ int	ft_strcmp(char *s1, char *s2)
 	difference = (int)s1[index] - (int)s2[index];
 	return (difference);
 }
-
-
-
-
-
-
-
-

@@ -6,38 +6,11 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 12:15:11 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/24 12:22:13 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/14 21:24:46 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
-
-static void	analize_uppercase(char *string, size_t index);
-static void	analize_lowercase(char *string, size_t index);
-
-/**
- * @brief Capitalizes the first letter of each word in a string;
- * 
- * @param str A pointer to the string;
- * @return The string capitalized (char *);
- */
-char	*ft_strcapitalize(char *str)
-{
-	size_t	index;
-
-	if (str == NULL)
-		return (NULL);
-	index = 0;
-	while (str[index] != '\0')
-	{
-		if (str[index] >= 'A' && str[index] <= 'Z')
-			analize_uppercase(str, index);
-		else if (str[index] >= 'a' && str[index] <= 'z')
-			analize_lowercase(str, index);
-		index++;
-	}
-	return (str);
-}
 
 static void	analize_uppercase(char *string, size_t index)
 {
@@ -59,6 +32,26 @@ static void	analize_lowercase(char *string, size_t index)
 		string[index] -= 32;
 }
 
+/**
+ * @brief Capitalizes the first letter of each word in a string;
+ * 
+ * @param str A pointer to the string;
+ * @return The string capitalized (char *);
+ */
+char	*ft_strcapitalize(char *str)
+{
+	size_t	index;
 
-
-
+	if (str == 0x0)
+		return (0x0);
+	index = 0;
+	while (str[index])
+	{
+		if (str[index] >= 'A' && str[index] <= 'Z')
+			analize_uppercase(str, index);
+		else if (str[index] >= 'a' && str[index] <= 'z')
+			analize_lowercase(str, index);
+		index++;
+	}
+	return (str);
+}

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 15:24:04 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/24 16:25:20 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/14 22:43:26 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,19 @@ char	*ft_strstr(const char *str, const char *to_find)
 	size_t	str_walker;
 	size_t	index;
 
-	if ((to_find[0] == '\0' && str[0] == '\0') || to_find[0] == '\0')
+	if ((!to_find[0] && !str[0]) || !to_find[0])
 		return ((char *)str);
 	str_walker = 0;
-	while (str[str_walker] != '\0')
+	while (str[str_walker])
 	{
 		index = 0;
 		while (to_find[index] == str[str_walker + index])
 		{
-			if (to_find[index + 1] == '\0')
+			if (!to_find[index + 1])
 				return (&((char *)str)[str_walker]);
 			index++;
 		}
 		str_walker++;
 	}
-	return (NULL);
+	return (0x0);
 }

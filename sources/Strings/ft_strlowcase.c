@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 12:19:28 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/24 12:22:49 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/14 22:27:18 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ char	*ft_strlowcase(char *str)
 {
 	size_t	index;
 
-	if (str == NULL)
-		return (NULL);
+	if (str == 0x0)
+		return (0x0);
 	index = 0;
-	while (str[index] != '\0')
+	while (str[index])
 	{
 		if (str[index] >= 'A' && str[index] <= 'Z')
 			str[index] += 32;

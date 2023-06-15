@@ -6,13 +6,21 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 12:28:59 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/24 13:51:32 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/14 22:26:01 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-static size_t	get_string_size(const char *str);
+static size_t	get_string_size(const char *str)
+{
+	size_t	size;
+
+	size = 0;
+	while (str[size] != '\0')
+		size++;
+	return (size);
+}
 
 /**
  * @brief Concatenates two strings; The destiny string must have enough space to
@@ -39,14 +47,4 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	dst[dest_size + index] = '\0';
 	return (dest_size + get_string_size(src));
-}
-
-static size_t	get_string_size(const char *str)
-{
-	size_t	size;
-
-	size = 0;
-	while (str[size] != '\0')
-		size++;
-	return (size);
 }

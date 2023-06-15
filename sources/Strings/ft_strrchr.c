@@ -6,13 +6,21 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 15:21:59 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/24 15:33:06 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/14 22:38:38 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-static size_t	go_to_string_end(const char *s);
+static size_t	go_to_string_end(const char *s)
+{
+	size_t	index;
+
+	index = 0;
+	while (s[index] != '\0')
+		index++;
+	return (index);
+}
 
 /**
  * @brief Locates the last occurrence of c in the string s;
@@ -30,20 +38,10 @@ char	*ft_strrchr(const char *s, int c)
 	while (index > 0)
 	{
 		if (s[index] == c)
-			return (&((char *)s)[index]);
+			return ((char *)s + index);
 		index--;
 	}
 	if (s[index] == c)
 		return ((char *)s);
-	return (NULL);
-}
-
-static size_t	go_to_string_end(const char *s)
-{
-	size_t	index;
-
-	index = 0;
-	while (s[index] != '\0')
-		index++;
-	return (index);
+	return (0x0);
 }

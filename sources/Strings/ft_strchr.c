@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 13:40:42 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/25 11:11:22 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/14 21:48:54 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,15 @@
  */
 char	*ft_strchr(const char *s, int c)
 {
-	int	index;
-
-	if (s == NULL)
-		return (NULL);
-	index = 0;
-	while (s[index] != '\0')
+	if (s == 0x0)
+		return (0x0);
+	while (*s)
 	{
-		if (s[index] == c)
-			return (&((char *)s)[index]);
-		index++;
+		if (*s == c)
+			return ((char *)s);
+		s++;
 	}
-	if (s[index] == c)
-		return (&((char *)s)[index]);
-	return (NULL);
+	if (*s == c)
+		return (((char *)s));
+	return (0x0);
 }

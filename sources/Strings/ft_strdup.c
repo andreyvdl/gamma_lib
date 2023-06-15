@@ -6,13 +6,21 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 17:42:23 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/24 17:49:32 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/14 21:55:19 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-static size_t	get_string_size(const char *string);
+static size_t	get_string_size(const char *string)
+{
+	size_t	index;
+
+	index = 0;
+	while (string[index])
+		index++;
+	return (index);
+}
 
 /**
  * @brief Duplicates a string;
@@ -23,27 +31,16 @@ static size_t	get_string_size(const char *string);
 char	*ft_strdup(const char *s)
 {
 	char	*copy;
-	size_t	index;
+	char	*temp;
 
+	if (s == 0x0)
+		return (0x0);
 	copy = (char *)malloc((get_string_size(s) + 1) * sizeof(char));
-	if (copy == NULL)
-		return (NULL);
-	index = 0;
-	while (s[index] != '\0')
-	{
-		copy[index] = s[index];
-		index++;
-	}
-	copy[index] = '\0';
+	if (copy == 0x0)
+		return (0x0);
+	temp = copy;
+	while (*s)
+		*temp++ = *s++;
+	*temp = '\0';
 	return (copy);
-}
-
-static size_t	get_string_size(const char *string)
-{
-	size_t	index;
-
-	index = 0;
-	while (string[index] != '\0')
-		index++;
-	return (index);
 }

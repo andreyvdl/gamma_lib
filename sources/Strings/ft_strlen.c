@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 09:51:20 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/25 09:53:34 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/14 22:26:58 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ size_t	ft_strlen(const char *s)
 {
 	size_t	index;
 
-	if (s == NULL)
+	if (s == 0x0)
 		return (0);
 	index = 0;
-	while (s[index] != '\0')
+	while (s[index])
 		index++;
 	return (index);
 }
