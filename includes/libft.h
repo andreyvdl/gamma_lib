@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:00:37 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/18 20:17:44 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/19 00:32:00 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,14 +106,22 @@ void	ft_list_foreach_if(
 t_uint	ft_next_prime(int nb);
 t_uint	ft_termial(unsigned int n);
 t_uint	ft_factorial(unsigned int n);
+bool	ft_isalnum(int c);
+bool	ft_isalpha(int c);
+bool	ft_isascii(int c);
+bool	ft_isdigit(int c);
+bool	ft_islower(int c);
+bool	ft_isprint(int c);
+bool	ft_isupper(int c);
+bool	ft_isprime(int nb);
 size_t	ft_strlen(const char *s);
+size_t	ft_strspn(const char *s, const char *accept);
+size_t	ft_strcspn(const char *s, const char *reject);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
 /* -------------------------- Comum pointer return -------------------------- */
 
-char	**ft_matrixdup(char **matrix);
-char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_itoh(int n);
 char	*ft_itoo(int n);
@@ -124,12 +132,15 @@ char	*ft_strupcase(char *str);
 char	*ft_strdup(const char *s);
 char	*ft_strlowcase(char *str);
 char	*ft_strcapitalize(char *str);
+char	**ft_matrixdup(char **matrix);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strcpy(char *dst, char *src);
+char	**ft_split(char const *s, char c);
 char	*ft_strcat(char *dest, char *src);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_strpbrk(const char *s, const char *accept);
 char	*ft_strstr(const char *str, const char *to_find);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -142,14 +153,6 @@ void	*ft_memmove(void *dst, const void *src, size_t n);
 
 /* ------------------------------ Comum return ------------------------------ */
 
-bool	ft_isalnum(int c);
-bool	ft_isalpha(int c);
-bool	ft_isascii(int c);
-bool	ft_isdigit(int c);
-bool	ft_islower(int c);
-bool	ft_isprint(int c);
-bool	ft_isupper(int c);
-bool	ft_isprime(int nb);
 double	ft_power(double number, int exponent);
 int		ft_atoi(const char *nptr);
 int		ft_otoi(const char *octal);
@@ -177,5 +180,7 @@ void	ft_free_matrix(void **matrix);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_swap(void **pointer1, void **pointer2);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+void	ft_search_replace_chr(char *str, char find, char put);
+void	ft_search_replace_str(char *str, char *find, char *put);
 
 #endif

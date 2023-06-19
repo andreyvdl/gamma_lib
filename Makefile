@@ -9,7 +9,7 @@ LIBFT_SOURCES=${addprefix sources/Binary_Tree/, ft_btree_apply_infix.c ft_btree_
 	${addprefix sources/Math_Functions/, ft_absolute_number.c ft_factorial.c ft_next_prime.c ft_power.c ft_termial.c} \
 	${addprefix sources/Memory/, ft_bzero.c ft_calloc.c ft_free.c ft_free_matrix.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_swap.c} \
 	${addprefix sources/Print_Functions/, ft_putchar.c ft_putchar_fd.c ft_putendl_fd.c ft_putendl.c ft_putnbr.c ft_putnbr_fd.c ft_putstr.c ft_putstr_fd.c} \
-	${addprefix sources/Strings/, ft_matrixdup.c ft_strcat.c ft_strcpy.c ft_strjoin.c ft_strlen.c ft_strncmp.c ft_strrev.c ft_strupcase.c ft_split.c ft_strchr.c ft_strdup.c ft_strlcat.c ft_strlowcase.c ft_strnstr.c ft_strstr.c ft_substr.c ft_strcapitalize.c ft_strcmp.c ft_striteri.c ft_strlcpy.c ft_strmapi.c ft_strrchr.c ft_strtrim.c} \
+	${addprefix sources/Strings/, ft_strcspn.c ft_strpbrk.c ft_strspn.c ft_matrixdup.c ft_search_replace_chr.c ft_search_replace_str.c ft_strcat.c ft_strcpy.c ft_strjoin.c ft_strlen.c ft_strncmp.c ft_strrev.c ft_strupcase.c ft_split.c ft_strchr.c ft_strdup.c ft_strlcat.c ft_strlowcase.c ft_strnstr.c ft_strstr.c ft_substr.c ft_strcapitalize.c ft_strcmp.c ft_striteri.c ft_strlcpy.c ft_strmapi.c ft_strrchr.c ft_strtrim.c} \
 	${addprefix sources/Utilities/, ft_tolower.c ft_toupper.c}
 LIBFT_OBJECTS=${LIBFT_SOURCES:.c=.o}
 # VARIABLES ====================================================================
@@ -72,7 +72,7 @@ fclean: clean
 	@rm -rf ${NAME}
 	${PROGRAM_DELETED}
 
-re: fclean all
+re: fclean ${NAME}
 	${RECOMPILATED}
 
 .PHONY: all clean fclean re
