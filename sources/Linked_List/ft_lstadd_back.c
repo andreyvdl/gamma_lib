@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 09:49:33 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 14:30:15 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static t_list	*get_last_node(t_list *list)
 {
-	while (list->next != 0x0)
+	while (list->next != NIL)
 		list = list->next;
 	return (list);
 }
@@ -31,9 +31,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
 
-	if (new == 0x0)
+	if (new == NIL)
 		return ;
-	else if (*lst == 0x0)
+	else if (*lst == NIL)
 	{
 		*lst = new;
 		return ;

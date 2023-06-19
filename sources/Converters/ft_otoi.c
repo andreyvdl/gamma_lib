@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:11:54 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 00:45:18 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_otoi(const char *octal)
 {
 	int	number;
 
-	if (octal == 0x0)
+	if (octal == NIL)
 		return (0);
 	walk_on_whitespaces(&octal);
 	number = 0;

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:46:54 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/14 22:42:21 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ char	*ft_strrev(char *str)
 {
 	size_t	end;
 
-	if (str == 0x0)
-		return (0x0);
+	if (str == NIL)
+		return (NIL);
 	end = get_string_size(str) - 1;
 	return (reverse_it(str, end));
 }

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 20:12:04 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 00:58:30 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:21 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_printf_fd(int file_descriptor, const char *string, ...)
 	int		bytes_printed;
 	va_list	arg_list;
 
-	if (string == 0x0)
+	if (string == NIL)
 		return (-1);
 	va_start(arg_list, string);
 	bytes_printed = loop_through_string_fd(file_descriptor, string, arg_list);

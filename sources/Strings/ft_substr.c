@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 23:02:58 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/14 22:56:24 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 16:43:47 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ static char	*mini_sub_string(void)
 	char	*sub_string;
 
 	sub_string = (char *)malloc(sizeof(char));
-	if (sub_string == 0x0)
-		return (0x0);
+	if (sub_string == NIL)
+		return (NIL);
 	sub_string[0] = '\0';
 	return (sub_string);
 }
@@ -67,8 +67,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*sub_string;
 	size_t	string_size;
 
-	if (s == 0x0)
-		return (0x0);
+	if (s == NIL)
+		return (NIL);
 	string_size = get_string_size(s);
 	if (string_size < start)
 		return (mini_sub_string());
@@ -78,13 +78,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		sub_string = (char *)malloc(string_size - start + 1);
 	else
 		sub_string = (char *)malloc(len + 1);
-	if (sub_string == 0x0)
-		return (0x0);
+	if (sub_string == NIL)
+		return (NIL);
 	return (fill_sub_string(s, sub_string, start, len));
 }
-
-
-
-
-
-

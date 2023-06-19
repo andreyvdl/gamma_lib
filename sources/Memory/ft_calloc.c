@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:43:35 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 16:03:10 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	limit;
 
 	if (nmemb == 0 || size == 0)
-		return (0x0);
+		return (NIL);
 	limit = nmemb * size;
 	if (limit / size != nmemb || limit / nmemb != size)
-		return (0x0);
+		return (NIL);
 	return (malloc_and_zeroed(limit));
 }
 
@@ -42,8 +42,8 @@ static void	*malloc_and_zeroed(size_t limit)
 	char	*temp;
 
 	array = (char *)malloc(limit);
-	if (array == 0x0)
-		return (0x0);
+	if (array == NIL)
+		return (NIL);
 	temp = array;
 	while (limit--)
 		*temp++ = '\0';

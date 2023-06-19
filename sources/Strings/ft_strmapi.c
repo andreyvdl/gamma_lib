@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 09:53:42 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/14 22:33:58 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 16:43:22 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*new_string;
 	unsigned int	index;
 
-	if (s == 0x0 || f == 0x0)
-		return (0x0);
+	if (s == NIL || f == NIL)
+		return (NIL);
 	new_string = (char *)malloc(sizeof(char) * (get_string_size(s) + 1));
-	if (new_string == 0x0)
-		return (0x0);
+	if (new_string == NIL)
+		return (NIL);
 	index = 0;
 	while (s[index])
 	{
@@ -50,7 +50,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	new_string[index] = '\0';
 	return (new_string);
 }
-
-
-
-

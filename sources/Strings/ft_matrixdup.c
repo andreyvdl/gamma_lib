@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:44:39 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 21:43:27 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	malloc_and_duplicate(char *matrix, char **copy, size_t line)
 {
 	*(copy + line) = (char *)malloc((get_string_size(matrix) + 1) * \
 								sizeof(char));
-	if (*(copy + line) == 0x0)
+	if (*(copy + line) == NIL)
 		return ;
 	while (*matrix)
 	{
@@ -70,23 +70,23 @@ char	**ft_matrixdup(char **matrix)
 	char	**copy;
 	size_t	line;
 
-	if (matrix == 0x0 || *matrix == 0x0)
-		return (0x0);
+	if (matrix == NIL || *matrix == NIL)
+		return (NIL);
 	copy = (char **)malloc((get_matrix_size(matrix) + 1) * sizeof(char *));
-	if (copy == 0x0)
-		return (0x0);
+	if (copy == NIL)
+		return (NIL);
 	line = 0;
 	while (*matrix)
 	{
 		malloc_and_duplicate(*matrix, copy, line);
-		if (*(copy + line) == 0x0)
+		if (*(copy + line) == NIL)
 		{
 			clear_matrix(copy);
-			return (0x0);
+			return (NIL);
 		}
 		line++;
 		matrix++;
 	}
-	*(copy + line) = 0x0;
+	*(copy + line) = NIL;
 	return (copy);
 }

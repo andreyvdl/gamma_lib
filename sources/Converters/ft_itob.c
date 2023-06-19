@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 09:47:02 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 00:27:43 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 16:44:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ static char	*allocate_and_fill(int nbr, int size)
 	char	*array;
 
 	array = (char *)malloc(sizeof(char) * (size + 1));
-	if (array == 0x0)
-		return (0x0);
+	if (array == NIL)
+		return (NIL);
 	*(array + size) = '\0';
 	while (size--)
 	{
@@ -55,11 +55,7 @@ char	*ft_itob(int nbr)
 	int	size;
 
 	if (nbr < 0)
-		return (0x0);
+		return (NIL);
 	size = get_size(nbr);
 	return (allocate_and_fill(nbr, size));
 }
-
-
-
-

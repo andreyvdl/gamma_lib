@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:28:16 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 17:45:21 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_swap(void **pointer1, void **pointer2)
 {
 	void	*temp;
 
-	if (pointer1 == 0x0 || pointer2 == 0x0)
+	if (pointer1 == NIL || pointer2 == NIL)
 		return ;
 	temp = *pointer1;
 	*pointer1 = *pointer2;

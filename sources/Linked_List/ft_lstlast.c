@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 12:23:29 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 14:32:57 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
  */
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (lst == 0x0)
-		return (0x0);
+	if (lst == NIL)
+		return (NIL);
 	while (lst->next)
 		lst = lst->next;
 	return (lst);

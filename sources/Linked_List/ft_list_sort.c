@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:22:31 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 14:11:16 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_list_sort(t_list **begin_list, int (*cmp)(void *, void *))
 	t_list	*current;
 	t_list	*next;
 
-	if (begin_list == 0x0 || *begin_list == 0x0 || cmp == 0x0)
+	if (begin_list == NIL || *begin_list == NIL || cmp == NIL)
 		return ;
 	current = *begin_list;
 	while (current->next)

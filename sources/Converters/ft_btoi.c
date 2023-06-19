@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 13:55:19 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/10 23:39:51 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_btoi(const char *binary)
 {
 	int		number;
 
-	if (binary == 0x0)
+	if (binary == NIL)
 		return (0);
 	walk_on_whitespaces(&binary);
 	number = 0;

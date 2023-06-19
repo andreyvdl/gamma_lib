@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:51:38 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/17 22:44:08 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_realloc_free(char **ptr)
 
 	i = 0;
 	if (!ptr)
-		return (0x0);
+		return (NIL);
 	while ((*ptr)[i] != '\n' && (*ptr)[i] != 0)
 		i++;
 	j = ft_strlen(*ptr);
@@ -37,7 +37,7 @@ void	*ft_realloc_free(char **ptr)
 	while ((*ptr)[i] != 0)
 		new_ptr[j++] = (*ptr)[i++];
 	free(*ptr);
-	*ptr = 0x0;
+	*ptr = NIL;
 	return ((void *)new_ptr);
 }
 
@@ -48,18 +48,18 @@ char	*ft_strjoin_free(char *s1, char *s2)
 	size_t	j;
 	size_t	sz;
 
-	if (s1 == 0x0 || s2 == 0x0)
-		return (0x0);
+	if (s1 == NIL || s2 == NIL)
+		return (NIL);
 	sz = ft_strlen(s1) + ft_strlen(s2) + 1;
 	str = (char *)malloc(sizeof(char) * sz);
-	if (str == 0x0)
-		return (0x0);
+	if (str == NIL)
+		return (NIL);
 	i = 0;
 	j = 0;
 	while (s1[j] != '\0')
 		str[i++] = s1[j++];
 	free(s1);
-	s1 = 0x0;
+	s1 = NIL;
 	j = 0;
 	while (s2[j] != '\0')
 		str[i++] = s2[j++];

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 13:05:47 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 17:57:18 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	if (fd > -1)
 	{
-		if (s != 0x0)
+		if (s != NIL)
 			write_string(s, fd);
 		write(fd, "\n", 1);
 	}

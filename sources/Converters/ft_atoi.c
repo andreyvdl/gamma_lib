@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 10:16:08 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 00:47:37 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static int	positive_integer(const char *string)
  */
 int	ft_atoi(const char *nptr)
 {
-	if (nptr == 0x0)
+	if (nptr == NIL)
 		return (0);
 	walk_on_whitespaces(&nptr);
 	if (*nptr == '-')

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 13:40:42 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/14 21:48:54 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
  */
 char	*ft_strchr(const char *s, int c)
 {
-	if (s == 0x0)
-		return (0x0);
+	if (s == NIL)
+		return (NIL);
 	while (*s)
 	{
 		if (*s == c)
@@ -32,5 +32,5 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if (*s == c)
 		return (((char *)s));
-	return (0x0);
+	return (NIL);
 }

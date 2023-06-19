@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 20:50:53 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 14:01:25 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ static t_list	*create_new_node(char *string)
 {
 	t_list	*new_node;
 
-	if (string == 0x0)
-		return (0x0);
+	if (string == NIL)
+		return (NIL);
 	new_node = (t_list *)malloc(sizeof(t_list));
-	if (new_node == 0x0)
-		return (0x0);
+	if (new_node == NIL)
+		return (NIL);
 	new_node->content = string;
-	new_node->next = 0x0;
+	new_node->next = NIL;
 	return (new_node);
 }
 
@@ -30,9 +30,9 @@ static void	add_to_the_end(t_list **list, t_list *new_node)
 {
 	t_list	*temporary;
 
-	if (new_node == 0x0)
+	if (new_node == NIL)
 		return ;
-	else if (*list == 0x0)
+	else if (*list == NIL)
 	{
 		*list = new_node;
 		return ;
@@ -54,9 +54,9 @@ t_list	*ft_list_push_strs(size_t size, char **strs)
 {
 	t_list	*list;
 
-	if (strs == 0x0 || *strs == 0x0)
-		return (0x0);
-	list = 0x0;
+	if (strs == NIL || *strs == NIL)
+		return (NIL);
+	list = NIL;
 	while (size)
 	{
 		add_to_the_end(&list, create_new_node(strs[size]));

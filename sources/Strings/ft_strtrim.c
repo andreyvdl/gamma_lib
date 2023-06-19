@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 19:51:30 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/14 22:53:43 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:21 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ static char	*copy_trimmed(char const *string, size_t start, size_t end)
 	size_t	index;
 
 	trimmed = (char *)malloc(sizeof(char) * (end - start + 1));
-	if (trimmed == 0x0)
-		return (0x0);
+	if (trimmed == NIL)
+		return (NIL);
 	index = 0;
 	while (start < end)
 	{
@@ -83,8 +83,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	start;
 	size_t	end;
 
-	if (s1 == 0x0)
-		return (0x0);
+	if (s1 == NIL)
+		return (NIL);
 	start = 0;
 	while (s1[start] && set_in_beginning(s1[start], set) == true)
 		start++;

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 17:44:03 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 14:51:10 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_lstsize(t_list *lst)
 {
 	size_t	counter;
 
-	if (lst == 0x0)
+	if (lst == NIL)
 		return (0);
 	counter = 0;
 	while (lst)

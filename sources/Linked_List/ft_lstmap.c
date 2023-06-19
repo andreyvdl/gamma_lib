@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 16:18:26 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 15:44:45 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ static t_list	*create_new_node(void *content)
 	t_list	*new_node;
 
 	new_node = (t_list *)malloc(sizeof(t_list));
-	if (new_node == 0x0)
-		return (0x0);
+	if (new_node == NIL)
+		return (NIL);
 	new_node->content = content;
-	new_node->next = 0x0;
+	new_node->next = NIL;
 	return (new_node);
 }
 
@@ -28,9 +28,9 @@ static void	clear_list(t_list **list, void (*delete_function)(void *))
 {
 	t_list	*temporary;
 
-	if (list == 0x0 || *list == 0x0)
+	if (list == NIL || *list == NIL)
 		return ;
-	while (*list != 0x0)
+	while (*list != NIL)
 	{
 		temporary = (*list)->next;
 		delete_function((*list)->content);
@@ -43,13 +43,13 @@ static void	add_node_to_new_list(t_list **new_list, t_list *new_node)
 {
 	t_list	*temporary;
 
-	if (*new_list == 0x0)
+	if (*new_list == NIL)
 	{
 		*new_list = new_node;
 		return ;
 	}
 	temporary = *new_list;
-	while (temporary->next != 0x0)
+	while (temporary->next != NIL)
 		temporary = temporary->next;
 	temporary->next = new_node;
 }
@@ -69,16 +69,16 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_list;
 	t_list	*new_node;
 
-	if (lst == 0x0)
-		return (0x0);
-	new_list = 0x0;
+	if (lst == NIL)
+		return (NIL);
+	new_list = NIL;
 	while (lst)
 	{
 		new_node = create_new_node(f(lst->content));
-		if (new_node == 0x0)
+		if (new_node == NIL)
 		{
 			clear_list(&new_list, del);
-			return (0x0);
+			return (NIL);
 		}
 		add_node_to_new_list(&new_list, new_node);
 		lst = lst->next;

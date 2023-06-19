@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 11:26:38 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 16:42:22 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*temporary;
 	unsigned char	character;
 
-	if (s == 0x0 || n == 0)
-		return (0x0);
+	if (s == NIL || n == 0)
+		return (NIL);
 	temporary = (unsigned char *)s;
 	character = (unsigned char)c;
 	while (n--)
@@ -36,5 +36,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		if (*temporary++ == character)
 			return ((void *)((temporary--) - (unsigned char *)s));
 	}
-	return (0x0);
+	return (NIL);
 }

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 14:37:37 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/14 22:37:23 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:21 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		}
 		big_walker++;
 	}
-	return (0x0);
+	return (NIL);
 }

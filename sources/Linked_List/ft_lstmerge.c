@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 09:56:08 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 15:44:38 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static t_list	*reach_end_of_list(t_list *list)
 	t_list	*walker;
 
 	walker = list;
-	while (walker->next != 0x0)
+	while (walker->next != NIL)
 		walker = walker->next;
 	return (walker);
 }
@@ -34,9 +34,9 @@ void	ft_lstmerge(t_list **begin_list1, t_list *begin_list2)
 {
 	t_list	*current;
 
-	if (begin_list2 == 0x0)
+	if (begin_list2 == NIL)
 		return ;
-	else if (*begin_list1 == 0x0)
+	else if (*begin_list1 == NIL)
 	{
 		*begin_list1 = begin_list2;
 		return ;

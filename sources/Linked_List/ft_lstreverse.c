@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 17:33:51 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 14:43:36 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ void	ft_lstreverse(t_list **begin_list)
 	t_list	*current;
 	t_list	*next;
 
-	if (begin_list == 0x0 || *begin_list == 0x0)
+	if (begin_list == NIL || *begin_list == NIL)
 		return ;
-	previous = 0x0;
+	previous = NIL;
 	current = *begin_list;
-	while (current != 0x0)
+	while (current != NIL)
 	{
 		next = current->next;
 		current->next = previous;

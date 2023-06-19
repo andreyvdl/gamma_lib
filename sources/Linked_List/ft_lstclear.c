@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 10:28:36 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 14:31:56 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*free_this;
 
-	while (*lst != 0x0)
+	while (*lst != NIL)
 	{
 		free_this = *lst;
 		*lst = (*lst)->next;
 		del(free_this->content);
 		free(free_this);
 	}
-	lst = 0x0;
+	lst = NIL;
 }

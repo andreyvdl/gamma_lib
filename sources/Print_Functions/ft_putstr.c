@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 15:16:27 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 18:08:12 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  */
 void	ft_putstr(char *str)
 {
-	if (str == 0x0)
+	if (str == NIL)
 		return ;
 	while (*str)
 	{

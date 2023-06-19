@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:40:26 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 16:01:11 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_bzero(void *s, size_t n)
 {
 	char	*temporary;
 
-	if (s == 0x0 || n == 0)
+	if (s == NIL || n == 0)
 		return ;
 	temporary = (char *)s;
 	while (n--)

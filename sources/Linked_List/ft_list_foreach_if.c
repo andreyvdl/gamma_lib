@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 13:52:35 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 13:33:59 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@
 void	ft_list_foreach_if(t_list *begin_list, void (*f)(void *), \
 							void *data_ref, int (*cmp)(void *, void *))
 {
-	if (f == 0x0 || data_ref == 0x0 || cmp == 0x0 || begin_list == 0x0)
+	if (f == NIL || data_ref == NIL || cmp == NIL || begin_list == NIL)
 		return ;
-	while (begin_list != 0x0)
+	while (begin_list != NIL)
 	{
 		if (cmp(begin_list->content, data_ref) == 0)
 			f(begin_list->content);

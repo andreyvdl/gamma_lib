@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 16:03:31 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 21:40:42 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 16:45:34 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,11 @@ static int	convert_hexadecimal(const char *hexadecimal)
  */
 int	ft_htoi(const char *hexadecimal)
 {
-	if (hexadecimal == 0x0)
+	if (hexadecimal == NIL)
 		return (0);
 	walk_on_whitespaces(&hexadecimal);
-	if (*hexadecimal == '0' && (*(hexadecimal+ 1) == 'x' || *(hexadecimal + 1) == 'X'))
+	if (*hexadecimal == '0' && \
+	(*(hexadecimal + 1) == 'x' || *(hexadecimal + 1) == 'X'))
 		hexadecimal += 2;
 	return (convert_hexadecimal(hexadecimal));
 }

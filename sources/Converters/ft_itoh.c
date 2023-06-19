@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 12:49:09 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 00:29:36 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 16:44:36 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,18 @@ char	*ft_itoh(int n)
 	int	size;
 
 	if (n < 0)
-		return (0x0);
+		return (NIL);
 	size = get_size(n);
 	return (allocate_and_fill(n, size));
 }
-
-
 
 static char	*allocate_and_fill(int number, int size)
 {
 	char	*array;
 
 	array = (char *)malloc(sizeof(char) * (size + 1));
-	if (array == 0x0)
-		return (0x0);
+	if (array == NIL)
+		return (NIL);
 	*(array + size) = '\0';
 	while (size--)
 	{

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 09:55:00 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 14:30:22 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
  */
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (new == 0x0)
+	if (new == NIL)
 		return ;
 	new->next = *lst;
 	*lst = new;

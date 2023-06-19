@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:46:45 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 02:56:44 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0))
-		return (0x0);
+		return (NIL);
 	if (!rest[fd])
 		rest[fd] = ft_calloc(sizeof(char), 1);
 	line = ft_calloc(sizeof(char), 1);
@@ -46,10 +46,10 @@ char	*get_next_line(int fd)
 	if (line[0] == 0 && rest[fd][0] == 0)
 	{
 		free(line);
-		line = 0x0;
+		line = NIL;
 		free(rest[fd]);
-		rest[fd] = 0x0;
-		return (0x0);
+		rest[fd] = NIL;
+		return (NIL);
 	}
 	return (line);
 }
@@ -91,13 +91,13 @@ static char	*read_fd(char **rest, char **line, int fd)
 		{
 			*line = until_newline(line, buf, rest);
 			free(buf);
-			buf = 0x0;
+			buf = NIL;
 			return (*line);
 		}
 		*line = ft_strjoin_free(*line, buf);
 	}
 	free(buf);
-	buf = 0x0;
+	buf = NIL;
 	return (*line);
 }
 
@@ -121,7 +121,7 @@ static char	*until_newline(char **line, char *buf, char **rest)
 		newline[i++] = buf[j++];
 	newline[i] = buf[j++];
 	free(*rest);
-	*rest = 0x0;
+	*rest = NIL;
 	if (buf[j] != 0)
 		secret_trick(rest, buf, j);
 	return (newline);

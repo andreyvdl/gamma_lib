@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 12:52:27 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/14 22:24:37 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:21 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*joined;
 	size_t	total_size;
 
-	if (s1 == 0x0 || s2 == 0x0)
-		return (0x0);
+	if (s1 == NIL || s2 == NIL)
+		return (NIL);
 	total_size = get_string_size(s1) + get_string_size(s2);
 	joined = (char *)malloc(sizeof(char) * (total_size + 1));
-	if (joined == 0x0)
-		return (0x0);
+	if (joined == NIL)
+		return (NIL);
 	concatenate_strings(joined, s1, s2);
 	return (joined);
 }

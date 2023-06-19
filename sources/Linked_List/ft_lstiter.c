@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 16:11:23 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 14:32:26 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  */
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (lst == 0x0)
+	if (lst == NIL)
 		return ;
 	while (lst)
 	{

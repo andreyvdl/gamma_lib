@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:20:45 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/10 21:48:56 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 16:15:45 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,21 @@
  * @returns NULL if the data reference can't be found or a pointer to the item
  * 			found (void *);
  */
-void	*ft_btree_search_item(t_btree *root, void *data_ref, \
-								int (*cmpf)(void *, void *))
+void	*ft_btree_search_item(
+t_btree *root, void *data_ref, int (*cmpf)(void *, void *))
 {
 	void	*content;
 
-	content = 0x0;
-	if (root == 0x0 || data_ref == 0x0 || cmpf == 0x0)
-		return (0x0);
+	content = NIL;
+	if (root == NIL || data_ref == NIL || cmpf == NIL)
+		return (NIL);
 	content = ft_btree_search_item(root->left, data_ref, cmpf);
-	if (content != 0x0)
+	if (content != NIL)
 		return (content);
 	if (cmpf(root->content, data_ref) == 0)
 		return (root->content);
 	content = ft_btree_search_item(root->right, data_ref, cmpf);
-	if (content != 0x0)
+	if (content != NIL)
 		return (content);
-	return (0x0);
+	return (NIL);
 }

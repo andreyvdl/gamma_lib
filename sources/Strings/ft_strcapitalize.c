@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 12:15:11 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/14 21:24:46 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:21 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ char	*ft_strcapitalize(char *str)
 {
 	size_t	index;
 
-	if (str == 0x0)
-		return (0x0);
+	if (str == NIL)
+		return (NIL);
 	index = 0;
 	while (str[index])
 	{

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 21:56:17 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/11 00:16:37 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ static char	*allocate_and_fill(int number, int size)
 	char	*array;
 
 	array = (char *)malloc(sizeof(char) * (size + 1));
-	if (array == 0x0)
-		return (0x0);
+	if (array == NIL)
+		return (NIL);
 	*(array + size) = '\0';
 	while (size--)
 	{
@@ -55,8 +55,8 @@ static char	*allocate_and_fill_negative(int number, int size)
 	char	*array;
 
 	array = (char *)malloc(sizeof(char) * (size + 2));
-	if (array == 0x0)
-		return (0x0);
+	if (array == NIL)
+		return (NIL);
 	*array = '-';
 	*(array + size + 1) = '\0';
 	while (size)

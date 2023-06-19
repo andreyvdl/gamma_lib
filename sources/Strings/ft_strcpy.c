@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 17:22:34 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/14 21:51:31 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:21 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ char	*ft_strcpy(char *dst, char *src)
 {
 	char	*temp;
 
-	if (src == 0x0 || dst == 0x0)
-		return (0x0);
+	if (src == NIL || dst == NIL)
+		return (NIL);
 	temp = dst;
 	while (*src)
 		*temp++ = *src++;

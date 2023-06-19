@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 15:21:59 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/14 22:38:38 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 13:34:21 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	if (s[index] == c)
 		return ((char *)s);
-	return (0x0);
+	return (NIL);
 }
