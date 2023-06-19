@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 17:35:43 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/25 17:41:48 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 18:07:37 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  * @param nb the number to be checked;
  * @return true if the number is prime; otherwise, false;
  */
-int	ft_isprime(int nb)
+bool	ft_isprime(int nb)
 {
 	if (nb == 2 || nb == 3 || nb == 5 || nb == 7)
 		return (true);
