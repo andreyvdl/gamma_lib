@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 20:39:14 by adantas-          #+#    #+#             */
-/*   Updated: 2023/04/20 21:52:12 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/18 16:41:51 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
  * @param n The number to calculate the factorial;
  * @return The total of the factorial (unsigned int);
  */
-unsigned int	ft_factorial(unsigned int n)
+t_uint	ft_factorial(unsigned int n)
 {
-	unsigned int	total;
+	t_uint	total;
 
 	if (n == 1 || n == 0)
 		return (1);
