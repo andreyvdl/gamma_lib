@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 21:52:31 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/23 19:43:33 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/23 23:17:35 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static __u_int	basic_cases(int nb)
  * lowest prime number;
  * 
  * @param nb The number we wish to find the next prime;
- * @return The next prime of the received number (unsigned int);
+ * @return The next prime of the received number (__u_int);
  */
 __u_int	ft_next_prime(int nb)
 {

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 20:39:14 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/23 19:26:04 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/23 23:17:35 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  * @brief Calculates the factorial of a given number; The number must be a 
  * 			spositive integer;
  * @warning If n is higher than 12 it will result in an overflow; Remeber the
- * 			limit of unsigned int is 4.294.967.295;
+ * 			limit of __u_int is 4.294.967.295;
  * 
  * @param n The number to calculate the factorial;
  * @return The total of the factorial (__u_int);
