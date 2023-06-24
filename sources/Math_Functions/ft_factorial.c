@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 20:39:14 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/18 16:41:51 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/23 19:26:04 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
  * 			limit of unsigned int is 4.294.967.295;
  * 
  * @param n The number to calculate the factorial;
- * @return The total of the factorial (unsigned int);
+ * @return The total of the factorial (__u_int);
  */
-t_uint	ft_factorial(unsigned int n)
+__u_int	ft_factorial(__u_int n)
 {
-	t_uint	total;
+	__u_int	total;
 
 	if (n == 1 || n == 0)
 		return (1);

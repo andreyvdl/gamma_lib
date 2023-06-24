@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:00:37 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/19 00:32:00 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/06/23 22:41:15 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 
 # include <limits.h>
 # include <stdarg.h>
-# include <stdbool.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdbool.h>
+# include <sys/types.h>
 
 /* ================================ Defines ================================ */
 
@@ -30,6 +31,8 @@
  * universal null pointer
  */
 # define NIL 0x0
+
+# define LCG_MULTIPLIER 6364136223846793005U
 
 /* ================================= Types ================================= */
 
@@ -58,11 +61,6 @@ typedef struct s_btree
 	struct s_btree	*left;
 	struct s_btree	*right;
 }	t_btree;
-
-/**
- * @brief Just a smaller version of unsigned int
- */
-typedef unsigned int	t_uint;
 
 /* =============================== Functions =============================== */
 /* ------------------------------ Binary tree ------------------------------ */
@@ -103,9 +101,9 @@ void	ft_list_foreach_if(
 
 /* ---------------------------- Composed return ---------------------------- */
 
-t_uint	ft_next_prime(int nb);
-t_uint	ft_termial(unsigned int n);
-t_uint	ft_factorial(unsigned int n);
+__u_int	ft_next_prime(int nb);
+__u_int	ft_termial(unsigned int n);
+__u_int	ft_factorial(unsigned int n);
 bool	ft_isalnum(int c);
 bool	ft_isalpha(int c);
 bool	ft_isascii(int c);
@@ -115,6 +113,7 @@ bool	ft_isprint(int c);
 bool	ft_isupper(int c);
 bool	ft_isprime(int nb);
 size_t	ft_strlen(const char *s);
+size_t	ft_rand(size_t seed, size_t min, size_t max);
 size_t	ft_strspn(const char *s, const char *accept);
 size_t	ft_strcspn(const char *s, const char *reject);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
