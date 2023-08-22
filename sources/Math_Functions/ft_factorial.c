@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 20:39:14 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/23 23:17:35 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/08/21 23:20:30 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
  * @brief Calculates the factorial of a given number; The number must be a 
  * 			spositive integer;
  * @warning If n is higher than 12 it will result in an overflow; Remeber the
- * 			limit of __u_int is 4.294.967.295;
+ * 			limit of uint32_t is 4.294.967.295;
  * 
  * @param n The number to calculate the factorial;
- * @return The total of the factorial (__u_int);
+ * @return The total of the factorial (uint32_t);
  */
-__u_int	ft_factorial(__u_int n)
+uint32_t	ft_factorial(uint32_t n)
 {
-	__u_int	total;
+	uint32_t	total;
 
 	if (n == 1 || n == 0)
 		return (1);

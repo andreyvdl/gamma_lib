@@ -6,13 +6,13 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 21:52:31 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/23 23:17:35 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/08/21 23:20:34 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-static __u_int	basic_cases(int nb)
+static uint32_t	basic_cases(int nb)
 {
 	if (nb < 2)
 		return (2);
@@ -31,9 +31,9 @@ static __u_int	basic_cases(int nb)
  * lowest prime number;
  * 
  * @param nb The number we wish to find the next prime;
- * @return The next prime of the received number (__u_int);
+ * @return The next prime of the received number (uint32_t);
  */
-__u_int	ft_next_prime(int nb)
+uint32_t	ft_next_prime(int nb)
 {
 	if (nb <= 10)
 		return (basic_cases(nb));

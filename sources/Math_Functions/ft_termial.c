@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 23:48:39 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/23 23:17:35 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/08/21 23:20:40 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
  * @warning Big numbers can cause an overflow;
  * 
  * @param n The number to calculate the termial;
- * @return The total of the termial (__u_int);
+ * @return The total of the termial (uint32_t);
  */
-__u_int	ft_termial(__u_int n)
+uint32_t	ft_termial(uint32_t n)
 {
-	__u_int	total;
+	uint32_t	total;
 
 	total = 1;
 	while (n > 1)
