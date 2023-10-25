@@ -6,18 +6,12 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:35:48 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/10/24 21:11:35 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
-/**
- * @brief Call a function to apply a fix after going through all nodes;
- * 
- * @param root A pointer to the root of the tree;
- * @param applyf A pointer to the function to apply the fix;
-**/
 void	ft_btree_apply_suffix(t_btree *root, void (*applyf)(void *))
 {
 	if (root == NIL || applyf == NIL)

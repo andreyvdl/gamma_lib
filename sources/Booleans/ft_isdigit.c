@@ -6,18 +6,12 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 17:21:17 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/18 18:07:25 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/10/24 22:15:16 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
-/**
- * @brief Checks for a digit;
- * 
- * @param c The character to be checked;
- * @return true if the character is a digit from 0 to 9; otherwise, false;
- */
 bool	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')

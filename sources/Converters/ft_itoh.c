@@ -6,11 +6,11 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 12:49:09 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/18 16:44:36 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/10/24 23:00:05 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
 static int	get_size(int number)
 {
@@ -25,31 +25,18 @@ static int	get_size(int number)
 	return (size);
 }
 
-static char	get_hexadecimal(int number);
-static char	*allocate_and_fill(int number, int size);
-
-/**
- * @brief Converts an integer to a hexadecimal string;
- * 
- * @param n The integer to be converted;
- * @return NULL if allocation fails or if n is negative, otherwise the string
- * 			(char *);
- */
-char	*ft_itoh(int n)
+static char	get_hexadecimal(int number)
 {
-	int	size;
-
-	if (n < 0)
-		return (NIL);
-	size = get_size(n);
-	return (allocate_and_fill(n, size));
+	if (number > 9)
+		return (number - 10 + 'A');
+	return (number + '0');
 }
 
-static char	*allocate_and_fill(int number, int size)
+static t_str	allocate_and_fill(int number, int size)
 {
-	char	*array;
+	t_str	array;
 
-	array = (char *)malloc(sizeof(char) * (size + 1));
+	array = (t_str)malloc(sizeof(char) * (size + 1));
 	if (array == NIL)
 		return (NIL);
 	*(array + size) = '\0';
@@ -61,9 +48,12 @@ static char	*allocate_and_fill(int number, int size)
 	return (array);
 }
 
-static char	get_hexadecimal(int number)
+t_str	ft_itoh(int n)
 {
-	if (number > 9)
-		return (number - 10 + 'A');
-	return (number + '0');
+	int	size;
+
+	if (n < 0)
+		return (NIL);
+	size = get_size(n);
+	return (allocate_and_fill(n, size));
 }

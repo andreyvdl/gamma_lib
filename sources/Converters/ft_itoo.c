@@ -6,11 +6,11 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:53:24 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/10/24 23:01:16 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
 static int	get_size(int number)
 {
@@ -25,11 +25,11 @@ static int	get_size(int number)
 	return (size);
 }
 
-static char	*allocate_and_fill(int number, int size)
+static t_str	allocate_and_fill(int number, int size)
 {
-	char	*array;
+	t_str	array;
 
-	array = (char *)malloc(sizeof(char) * (size + 1));
+	array = (t_str)malloc(sizeof(char) * (size + 1));
 	if (array == NIL)
 		return (NIL);
 	*(array + size) = '\0';
@@ -41,16 +41,7 @@ static char	*allocate_and_fill(int number, int size)
 	return (array);
 }
 
-static char	*allocate_and_fill(int number, int size);
-
-/**
- * @brief Converts an integer to octal
- * 
- * @param n The integer to be converted
- * @return NULL if the integer is negative; Otherwise, the converted number
- * 			in octal (char *);
- */
-char	*ft_itoo(int n)
+t_str	ft_itoo(int n)
 {
 	int	size;
 

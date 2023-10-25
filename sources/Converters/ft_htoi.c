@@ -6,13 +6,13 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 16:03:31 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/18 16:45:34 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/10/24 22:53:10 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
-static void	walk_on_whitespaces(const char **string)
+static void	walk_on_whitespaces(t_str *string)
 {
 	while (**string == ' ' || **string == '\t' || **string == '\n' || \
 	**string == '\v' || **string == '\f' || **string == '\r')
@@ -30,7 +30,7 @@ static int	get_decimal_value(char byte)
 	return (-1);
 }
 
-static int	convert_hexadecimal(const char *hexadecimal)
+static int	convert_hexadecimal(t_str hexadecimal)
 {
 	int	decimal;
 	int	number;
@@ -46,17 +46,7 @@ static int	convert_hexadecimal(const char *hexadecimal)
 	return (number);
 }
 
-/**
- * @brief Convert a hexadecimal string to an integer; The string is composed of
- * 			optional whitespaces, followed by an optional indicator of
- * 			hexadecimal, followed by a sequence of digits or letters from A to
- * 			F;
- * 
- * @param hexadecimal A pointer to the string to be converted;
- * @return 0 if the string is NULL or if the digits and letters don't make part
- * 			of the initial sequence; Otherwise, the converted number (int);
- */
-int	ft_htoi(const char *hexadecimal)
+int	ft_htoi(t_str hexadecimal)
 {
 	if (hexadecimal == NIL)
 		return (0);

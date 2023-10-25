@@ -6,18 +6,12 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 12:29:04 by adantas-          #+#    #+#             */
-/*   Updated: 2023/06/18 13:34:20 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/10/24 20:52:12 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
-/**
- * @brief Creates a new node of the binary tree;
- * 
- * @param item A pointer to the content to be put in the node;
- * @return A pointer to the new node;
- */
 t_btree	*ft_btree_create_node(void *item)
 {
 	t_btree	*new;
