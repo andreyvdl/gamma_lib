@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:00:37 by adantas-          #+#    #+#             */
-/*   Updated: 2023/10/24 23:02:19 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/10/26 00:01:13 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,6 +189,14 @@ bool		ft_isalpha(int c);
 bool		ft_isascii(int c);
 
 /**
+ * @brief Checks for space or tab;
+ * 
+ * @param c The character to be checked;
+ * @return true if the character is space or tab; otherwise, false;
+ */
+bool		ft_isblank(int c);
+
+/**
  * @brief Checks for a digit;
  * 
  * @param c The character to be checked;
@@ -335,7 +343,6 @@ int			ft_otoi(t_str octal);
 int			ft_btoi(t_str binary);
 int			ft_strcmp(char *s1, char *s2);
 int			ft_absolute_number(int number);
-
 
 /**
  * @brief Convert a hexadecimal string to an integer; The string is composed of
