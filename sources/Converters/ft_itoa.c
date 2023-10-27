@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 21:56:17 by adantas-          #+#    #+#             */
-/*   Updated: 2023/10/24 22:55:36 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/10/26 22:53:07 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ static int	get_size(int number)
 			number /= 10;
 			size++;
 		}
-		return (size);
 	}
 	while (number > 9)
 	{
@@ -41,10 +40,10 @@ static t_str	allocate_and_fill(int number, int size)
 	array = (t_str)malloc(sizeof(char) * (size + 1));
 	if (array == NIL)
 		return (NIL);
-	*(array + size) = '\0';
+	array[size] = 0;
 	while (size--)
 	{
-		*(array + size) = number % 10 + '0';
+		array[size] = number % 10 + '0';
 		number /= 10;
 	}
 	return (array);
@@ -58,10 +57,10 @@ static t_str	allocate_and_fill_negative(int number, int size)
 	if (array == NIL)
 		return (NIL);
 	*array = '-';
-	*(array + size + 1) = '\0';
+	array[size + 1] = 0;
 	while (size)
 	{
-		*(array + size) = (number % 10) * -1 + '0';
+		array[size] = (number % 10) * -1 + '0';
 		number /= 10;
 		size--;
 	}

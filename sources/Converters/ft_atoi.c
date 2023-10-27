@@ -6,49 +6,43 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 10:16:08 by adantas-          #+#    #+#             */
-/*   Updated: 2023/10/24 22:49:27 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/10/26 22:04:30 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	walk_on_whitespaces(t_str *string)
+static int	negative_integer(t_str str)
 {
-	while (**string == ' ' || **string == '\t' || **string == '\n' || \
-	**string == '\v' || **string == '\f' || **string == '\r')
-		(*string)++;
-}
+	int	nbr;
 
-static int	negative_integer(t_str string)
-{
-	int	number;
-
-	number = 0;
-	while (*string >= '0' && *string <= '9')
-		number = number * 10 + (*string++ - '0');
-	return (number * -1);
+	nbr = 0;
+	while (ft_isdigit(*str))
+		nbr = nbr * 10 + (*str++ - '0');
+	return (nbr * -1);
 }
 
 static int	positive_integer(t_str str)
 {
-	int	number;
+	int	nbr;
 
-	number = 0;
+	nbr = 0;
 	if (*str == '+')
 		str++;
-	while (*str >= '0' && *str <= '9')
-		number = number * 10 + (*str++ - '0');
-	return (number);
+	while (ft_isdigit(*str))
+		nbr = nbr * 10 + (*str++ - '0');
+	return (nbr);
 }
 
 int	ft_atoi(t_str nptr)
 {
 	if (nptr == NIL)
 		return (0);
-	walk_on_whitespaces(&nptr);
+	while (ft_isspace(*nptr))
+		nptr++;
 	if (*nptr == '-')
 		return (negative_integer(nptr));
-	else if (*nptr == '+' || (*nptr >= '0' && *nptr <= '9'))
+	if (*nptr == '+' || ft_isdigit(*nptr))
 		return (positive_integer(nptr));
 	return (0);
 }

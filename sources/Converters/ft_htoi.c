@@ -6,53 +6,36 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 16:03:31 by adantas-          #+#    #+#             */
-/*   Updated: 2023/10/24 22:53:10 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/10/26 22:16:27 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	walk_on_whitespaces(t_str *string)
+static int	convert_hexadecimal(t_str hex)
 {
-	while (**string == ' ' || **string == '\t' || **string == '\n' || \
-	**string == '\v' || **string == '\f' || **string == '\r')
-		(*string)++;
-}
+	int	nbr;
 
-static int	get_decimal_value(char byte)
-{
-	if (byte >= '0' && byte <= '9')
-		return (byte - '0');
-	else if (byte >= 'a' && byte <= 'f')
-		return (byte - 'a' + 10);
-	else if (byte >= 'A' && byte <= 'F')
-		return (byte - 'A' + 10);
-	return (-1);
-}
-
-static int	convert_hexadecimal(t_str hexadecimal)
-{
-	int	decimal;
-	int	number;
-
-	number = 0;
-	while (*hexadecimal)
+	nbr = 0;
+	while (ft_isxdigit(*hex))
 	{
-		decimal = get_decimal_value(*hexadecimal++);
-		if (decimal == -1)
-			break ;
-		number = number * 16 + decimal;
+		if (ft_isdigit(*hex))
+			nbr = nbr * 16 + (*hex++ - '0');
+		if (*hex >= 'a' && *hex <= 'f')
+			nbr = nbr * 16 + (*hex++ - 'a' + 10);
+		if (*hex >= 'A' && *hex <= 'F')
+			nbr = nbr * 16 + (*hex++ - 'A' + 10);
 	}
-	return (number);
+	return (nbr);
 }
 
-int	ft_htoi(t_str hexadecimal)
+int	ft_htoi(t_str hex)
 {
-	if (hexadecimal == NIL)
+	if (hex == NIL)
 		return (0);
-	walk_on_whitespaces(&hexadecimal);
-	if (*hexadecimal == '0' && \
-	(*(hexadecimal + 1) == 'x' || *(hexadecimal + 1) == 'X'))
-		hexadecimal += 2;
-	return (convert_hexadecimal(hexadecimal));
+	while (ft_isspace(*hex))
+		++hex;
+	if (*hex == '0' && (hex[1] == 'x' || hex[1] == 'X'))
+		hex += 2;
+	return (convert_hexadecimal(hex));
 }

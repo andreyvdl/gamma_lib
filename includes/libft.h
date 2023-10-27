@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:00:37 by adantas-          #+#    #+#             */
-/*   Updated: 2023/10/26 00:01:13 by adantas-         ###   ########.fr       */
+/*   Updated: 2023/10/26 22:10:10 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -221,12 +221,28 @@ bool		ft_islower(int c);
 bool		ft_isprint(int c);
 
 /**
+ * @brief Checks for any whitespace character;
+ * 
+ * @param c The character to be checked;
+ * @return true if the character is a whitespace; otherwise, false;
+ */
+bool		ft_isspace(int c);
+
+/**
  * @brief Checks for an uppercase letter;
  * 
  * @param c The character to be checked;
  * @return true if the character is uppercase; otherwise, false;
  */
 bool		ft_isupper(int c);
+
+/**
+ * @brief Checks for hexadecimal digits;
+ * 
+ * @param c The character to be checked;
+ * @return true if the character is hexadecimal; otherwise, false;
+ */
+bool		ft_isxdigit(int c);
 
 /**
  * @brief Checks if the number is prime;
