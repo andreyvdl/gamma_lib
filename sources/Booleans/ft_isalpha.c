@@ -10,11 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 bool	ft_isalpha(int c)
 {
-	if (ft_islower(c) || ft_isupper(c))
-		return (true);
-	return (false);
+	return (ft_islower(c) || ft_isupper(c));
 }

@@ -10,11 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 bool	ft_islower(int c)
 {
-	if (c >= 'a' && c <= 'z')
-		return (true);
-	return (false);
+	return (c >= 'a' && c <= 'z');
 }

@@ -10,11 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 bool	ft_isblank(int c)
 {
-	if (c == ' ' || c == '\t')
-		return (true);
-	return (false);
+	return (c == ' ' || c == '\t');
 }

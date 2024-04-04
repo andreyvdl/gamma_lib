@@ -10,11 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 bool	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 127)
-		return (true);
-	return (false);
+	return (c >= 0 && c <= 127);
 }
