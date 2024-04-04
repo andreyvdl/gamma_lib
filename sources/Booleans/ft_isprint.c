@@ -10,11 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 bool	ft_isprint(int c)
 {
-	if (c >= ' ' && c <= '~')
-		return (true);
-	return (false);
+	return (c >= ' ' && c <= '~');
 }

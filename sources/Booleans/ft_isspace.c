@@ -10,12 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 bool	ft_isspace(int c)
 {
-	if (c == ' ' || c == '\t' || c == '\n' || c == '\v' || c == '\f' \
-	|| c == '\r')
-		return (true);
-	return (false);
+	return (c == ' ' || c == '\t' || c == '\n' || c == '\v' || c == '\f'
+	  || c == '\r');
 }
