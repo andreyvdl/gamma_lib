@@ -10,24 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-static void	connect_new_node(t_btree *previous, t_btree *new, int result)
-{
-	if (result >= 0)
-		previous->right = new;
-	else
-		previous->left = new;
-}
+#include "../../includes/libft.h"
 
 void	ft_btree_insert_data(t_btree **root, void *item, \
 							int (*cmpf)(void *, void *))
 {
 	t_btree	*current;
 	t_btree	*previous;
-	t_btree	*new;
 
-	if (item == NIL || cmpf == NIL)
+	if (item == NIL || cmpf == NIL || root == NIL)
 		return ;
 	if (*root == NIL)
 	{
@@ -43,8 +34,8 @@ void	ft_btree_insert_data(t_btree **root, void *item, \
 		else
 			current = current->left;
 	}
-	new = ft_btree_create_node(item);
-	if (new == NIL)
-		return ;
-	connect_new_node(previous, new, cmpf(new->content, previous->content));
+	if (cmpf(item, previous->content) >= 0)
+		previous->right = ft_btree_create_node(item);
+	else
+		previous->left = ft_btree_create_node(item);
 }
