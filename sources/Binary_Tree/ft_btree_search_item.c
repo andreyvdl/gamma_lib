@@ -13,7 +13,7 @@
 #include "../../includes/libft.h"
 
 void	*ft_btree_search_item(t_btree *root, void *data_ref, \
-							int (*cmpf)(void *, void *))
+	int (*cmpf)(void *, void *) )
 {
 	void	*content;
 

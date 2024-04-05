@@ -12,22 +12,22 @@
 
 #include "../../includes/libft.h"
 
-int				print_char(char character);
-int				print_char_fd(int file_descriptor, char character);
-int				print_hexadecimal_lowercase(size_t number);
-int				print_hexadecimal_lowercase_fd(int file_descriptor, \
-												size_t number);
-int				print_hexadecimal_uppercase(size_t number);
-int				print_hexadecimal_uppercase_fd(int file_descriptor, \
-												size_t number);
-int				print_int_fd(int file_descriptor, int number);
-int				print_int(int number);
-int				print_ptr_fd(int file_descriptor, size_t address);
-int				print_ptr(size_t address);
-int				print_string(char *string);
-int				print_string_fd(int file_descriptor, char *string);
-int				print_unsigned_int(uint32_t number);
-int				print_unsigned_int_fd(int file_descriptor, uint32_t number);
+int	print_char(char character);
+int	print_char_fd(int file_descriptor, char character);
+int	print_hexadecimal_lowercase(size_t number);
+int	print_hexadecimal_lowercase_fd(int file_descriptor, \
+		size_t number);
+int	print_hexadecimal_uppercase(size_t number);
+int	print_hexadecimal_uppercase_fd(int file_descriptor, \
+		size_t number);
+int	print_int_fd(int file_descriptor, int number);
+int	print_int(int number);
+int	print_ptr_fd(int file_descriptor, size_t address);
+int	print_ptr(size_t address);
+int	print_string(char *string);
+int	print_string_fd(int file_descriptor, char *string);
+int	print_unsigned_int(uint32_t number);
+int	print_unsigned_int_fd(int file_descriptor, uint32_t number);
 
 static int	print_argument(char byte, va_list arg_list)
 {

@@ -13,7 +13,7 @@
 #include "../../includes/libft.h"
 
 void	ft_btree_insert_data(t_btree **root, void *item, \
-							int (*cmpf)(void *, void *))
+	int (*cmpf)(void *, void *) )
 {
 	t_btree	*current;
 	t_btree	*previous;

@@ -10,39 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-static int	negative_integer(t_str str)
-{
-	int	nbr;
-
-	nbr = 0;
-	while (ft_isdigit(*str))
-		nbr = nbr * 10 + (*str++ - '0');
-	return (nbr * -1);
-}
-
-static int	positive_integer(t_str str)
-{
-	int	nbr;
-
-	nbr = 0;
-	if (*str == '+')
-		str++;
-	while (ft_isdigit(*str))
-		nbr = nbr * 10 + (*str++ - '0');
-	return (nbr);
-}
+#include "../../includes/libft.h"
 
 int	ft_atoi(t_str nptr)
 {
+	bool	neg;
+	int		nbr;
+
 	if (nptr == NIL)
 		return (0);
 	while (ft_isspace(*nptr))
 		nptr++;
-	if (*nptr == '-')
-		return (negative_integer(nptr));
-	if (*nptr == '+' || ft_isdigit(*nptr))
-		return (positive_integer(nptr));
-	return (0);
+	neg = *nptr == '-';
+	nptr = nptr + 1 * (neg || *nptr == '+');
+	while (ft_isdigit(*nptr))
+		nbr = nbr * 10 + (*nptr - '0');
+	if (neg)
+		return (nbr * -1);
+	return (nbr);
 }
