@@ -6,22 +6,22 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 22:47:38 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/05 00:46:08 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/06 00:54:58 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-static int64_t	base2(t_str str, bool neg);
-static int64_t	base8(t_str str, bool neg);
-static int64_t	base16(t_str str, bool neg);
+static int64_t	base2(char *str, bool neg);
+static int64_t	base8(char *str, bool neg);
+static int64_t	base16(char *str, bool neg);
 
-int64_t	ft_atobase(t_str str, t_str chars, int base)
+int64_t	ft_atobase(char *str, char *chars, int base)
 {
 	bool	neg;
 	int64_t	nbr;
 
-	if (str == NIL || chars == NIL || base < 2)
+	if (str == NIL || chars == NIL || base < 2 || base > 36)
 		return (0);
 	while (ft_isspace(*str))
 		++str;
@@ -40,7 +40,7 @@ int64_t	ft_atobase(t_str str, t_str chars, int base)
 	return (nbr);
 }
 
-static int64_t	base2(t_str str, bool neg)
+static int64_t	base2(char *str, bool neg)
 {
 	int64_t	nbr;
 
@@ -54,7 +54,7 @@ static int64_t	base2(t_str str, bool neg)
 	return (nbr);
 }
 
-static int64_t	base8(t_str str, bool neg)
+static int64_t	base8(char *str, bool neg)
 {
 	int64_t	nbr;
 
@@ -68,7 +68,7 @@ static int64_t	base8(t_str str, bool neg)
 	return (nbr);
 }
 
-static int64_t	base16(t_str str, bool neg)
+static int64_t	base16(char *str, bool neg)
 {
 	int64_t	nbr;
 

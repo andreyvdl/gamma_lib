@@ -6,11 +6,11 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 21:56:17 by adantas-          #+#    #+#             */
-/*   Updated: 2023/10/26 22:53:07 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/06 03:01:43 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 static int	get_size(int number)
 {
@@ -33,11 +33,11 @@ static int	get_size(int number)
 	return (size);
 }
 
-static t_str	allocate_and_fill(int number, int size)
+static char	*allocate_and_fill(int number, int size)
 {
-	t_str	array;
+	char	*array;
 
-	array = (t_str)malloc(sizeof(char) * (size + 1));
+	array = malloc(sizeof(char) * (size + 1));
 	if (array == NIL)
 		return (NIL);
 	array[size] = 0;
@@ -49,11 +49,11 @@ static t_str	allocate_and_fill(int number, int size)
 	return (array);
 }
 
-static t_str	allocate_and_fill_negative(int number, int size)
+static char	*allocate_and_fill_negative(int number, int size)
 {
-	t_str	array;
+	char	*array;
 
-	array = (t_str)malloc(sizeof(char) * (size + 2));
+	array = malloc(sizeof(char) * (size + 2));
 	if (array == NIL)
 		return (NIL);
 	*array = '-';
@@ -67,7 +67,7 @@ static t_str	allocate_and_fill_negative(int number, int size)
 	return (array);
 }
 
-t_str	ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int	size;
 
